@@ -1,0 +1,451 @@
+{
+  "ep": "ep02",
+  "title": "left up.",
+  "targetSeconds": 47.5,
+  "format": "9:16 1080x1920 24fps",
+  "promptSuffix": "vertical 9:16, shot on a mirrorless camera, 35mm lens, f/1.8, shallow depth of field, natural light, muted colors, subtle handheld movement, film grain, photorealistic, no text",
+  "promptSuffixLocked": "vertical 9:16, shot on a mirrorless camera, 24mm lens, f/2.8, static locked-off camera on a tripod, natural light, muted colors, film grain, photorealistic, no text",
+  "ceilingNegative": "no ceiling fan, no ceiling light fixture, no lamp on the ceiling, no smoke detector, plain flat white ceiling, no constellation pattern, no moon, no planets, no stars outside the ceiling, no window sky stars",
+  "rules": [
+    "Blender 미설치 — method 는 ai(새 생성) 또는 library(기존 키프레임 재사용·편집 처리)만 쓴다.",
+    "C1·C7 은 삼각대 고정(locked-off), 프레이밍 100% 동일. 공통 suffix 대신 promptSuffixLocked 사용. C7 의 모든 판은 C1 판(K01d/K01g)에서 image-edit 또는 합성으로만 만든다(새 생성 금지). 편집에서 두 판을 difference 블렌드로 겹쳐 새 별 외에 차이가 없는지 확인.",
+    "C1 훅 노출 램프: 앰버 판(K01d) → '딸깍' 프레임에서 하드컷 → 순검정 0.4초(≤10프레임) → 어둠 판(K01g) 전체에 단일 글로벌 커브(블랙 포인트·게인)를 1.5초 동안 0→100% 로 올린다. 별마다 다른 마스크·키프레임 금지. 별 밝기 차이는 판 자체에 고정돼 있으므로 가장 밝은 별이 먼저, 가장 흐린 별이 마지막(≈2.3초)에 문턱을 넘는다. 그 뒤 별은 깜빡이거나 밝아지지 않는다.",
+    "야광 판 제작(K01g·K04g·K07g): 1안 image-edit('lamp off, faint glow'), 2안(권장 폴백·검수 기준) 편집 합성 — 앰버 판을 -5스톱·약간 푸르게 눌러 방을 거의 검게, 별 모양 정적 매트 7개(K04 는 7개, K07 은 8개)를 한 번만 그려 옅은 연둣빛(#B9E3A8 근처, 채도 낮게) 발광을 채우고 별 크기의 1.5배 이내 소프트 블룸만. 레이 스파이크·렌즈 플레어·별 주변 빛번짐 원판 금지. 최종 별 휘도 IRE 8~25(제각각), 천장 바탕 IRE 2~4.",
+    "AI 결과 폐기 기준(야광 판): 별이 네온처럼 밝음 / 별 개수·위치·모양이 앰버 판과 다름 / 별자리 모양으로 재배치 / 창밖에 진짜 별하늘 / 천장 선풍기·조명기구 등장 / 천장 아닌 하늘로 보임.",
+    "별 디자인 고정: 작은 손바닥 크기의 둥근 모서리 5각 플라스틱 별, 크기 3종 섞임, 불규칙 배치(별자리·글자·하트 모양 금지). 옛 별 = 누런 흰색·가장자리 바램. 새 별 = 깨끗한 연한 연둣빛 흰색.",
+    "탁상 시계는 이 편 전체에서 정확히 3회: C2 틸트 속 1회(디스플레이는 작고 읽히지 않게 — 숫자 합성 안 함) + C4 인서트 2회(11:41 PM / 12:03 AM, 각 0.5초, 숫자는 편집 합성). C1·C4 와이드·C5·C6·C7 프레임 안에는 시계가 보이지 않게 배치. 째깍·알람음 없음.",
+    "사람: 얼굴 0. C3① 역광 실루엣 1.5초가 유일한 전신. 나머지는 손·팔뚝(회색 무지 티셔츠 소매)만. 침대에 누워 천장을 올려다보는 구도·시점 금지 — C1·C4·C7 카메라 높이는 서 있는 사람 가슴~어깨(1.2~1.5m), 침대는 프레임 밖.",
+    "이삿짐 상자·종이봉투·별 시트·테이프에 글자·로고·바코드·인쇄 없음(프롬프트에 'plain, unmarked, no text, no logo'). 실존 브랜드·작품명 프롬프트 금지.",
+    "안전 영역: 별·손·문구는 화면 상단~중앙. 하단 25%·우측 15% 비움. C4·C7 화분은 프레임 하단에서 30% 이상 위(세로 1920 기준 y ≤ 1340px).",
+    "새잎·꽃 없음. 화분 상태: C2 중립, C4 창빛 받음, C5 흙 위 별, C7 윤곽 + 창빛 한 줄."
+  ],
+  "keyframes": [
+    {
+      "key": "K01d",
+      "kind": "image",
+      "for": [
+        "C1"
+      ],
+      "prompt": "night, small studio apartment, static wide shot from standing chest height in the corner beside a wooden desk, camera tilted up about 35 degrees toward where the white wall meets the plain flat white ceiling, upper two thirds of frame is ceiling with seven small faded yellowish-white plastic five-point stars stuck at irregular positions and three different sizes, one star slightly lifted at one corner directly above the desk; lower third: edge of the wooden desk with a small potted plant silhouette and a warm desk lamp at the bottom edge throwing amber light upward onto the wall and ceiling, edge of a sheer white curtain at frame left, no clock visible",
+      "suffix": "promptSuffixLocked + ceilingNegative",
+      "notes": "에피소드의 마스터 판. 별 7개의 위치·크기를 이 판이 정의한다(C2·C3·C6 은 앵글이 달라 근사만 맞춤). 화분 윤곽은 프레임 하단에서 30~40% 높이. 재시도 예산 4."
+    },
+    {
+      "key": "K01g",
+      "kind": "image-edit|composite",
+      "from": "K01d",
+      "for": [
+        "C1"
+      ],
+      "prompt": "same exact composition and camera as K01d, desk lamp switched off, room almost completely dark, the seven plastic stars on the ceiling emit a very faint pale green phosphorescent glow, different faint brightness per star, no halos, no rays, ceiling barely visible, a thin line of cool street light from the window touches the edge of the potted plant",
+      "notes": "rules 의 '야광 판 제작' 참조. 1안 실패(2회) 시 즉시 2안 합성. 램프 OFF 판이므로 화분 창빛 한 줄은 이 판에서 같이 만든다(C7 과 동일)."
+    },
+    {
+      "key": "K07d",
+      "kind": "image-edit",
+      "from": "K01d",
+      "for": [
+        "C7"
+      ],
+      "prompt": "identical image, add one new small plastic five-point star on the ceiling right next to the star above the desk, the new star is clean pale greenish-white and crisp, the old stars unchanged",
+      "notes": "새 별은 C6 K06d 의 '옛 별 옆' 위치와 일치(책상 위 들렸던 별의 옆). difference 블렌드로 나머지 픽셀 불변 확인."
+    },
+    {
+      "key": "K07g",
+      "kind": "image-edit|composite",
+      "from": "K01g",
+      "for": [
+        "C7"
+      ],
+      "prompt": "identical image, add one more faint glowing star next to the star above the desk, this eighth star glows slightly brighter and greener than the seven old ones but still soft and dim",
+      "notes": "2안 합성 권장: K01g 합성 프로젝트에 8번째 매트 하나만 추가, 휘도 = 가장 밝은 옛 별 × 1.4~1.6. 새 별이 '마법처럼' 튀지 않게."
+    },
+    {
+      "key": "K02a",
+      "kind": "image",
+      "for": [
+        "C2"
+      ],
+      "prompt": "bright neutral daylight, small studio apartment just moved into, floor with two or three plain unmarked cardboard moving boxes sealed with tape in the lower part of frame, behind them a half-empty wooden desk by a window with sheer white curtains, open laptop, a small digital desk clock seen from the side with its display too small to read, a small potted plant with neutral healthy leaves, camera at waist height",
+      "suffix": "promptSuffix + 'plain unmarked boxes, no text, no logo'",
+      "notes": "틸트 시작 프레임."
+    },
+    {
+      "key": "K02t",
+      "kind": "image-edit (outpaint up)",
+      "from": "K02a",
+      "for": [
+        "C2"
+      ],
+      "prompt": "extend the image upward into one tall continuous vertical frame: the white wall above the desk and window continues up to a plain flat white ceiling in daylight, on the ceiling seven small faded yellowish plastic five-point stars at irregular positions and different sizes, barely noticeable in daylight, edges discolored, one star directly above the desk and potted plant is peeling with one corner lifted",
+      "suffix": "ceilingNegative",
+      "notes": "캔버스 1080×≈3600(세로 약 1.9배). 편집에서 아래→위 가상 틸트(팬 + 미세 스케일 102→100%). 원근이 납작해 보이면 폴백: K02a→ 천장 끝 프레임으로 first/last-frame img2vid 1회."
+    },
+    {
+      "key": "K03a",
+      "kind": "image",
+      "for": [
+        "C3"
+      ],
+      "prompt": "daylight, strong backlight from a window with sheer white curtains, silhouette of a young man in a plain grey t-shirt stepping up onto a wooden desk chair in front of the desk, face completely dark in shadow, body framed knees up, arm starting to reach toward the ceiling",
+      "suffix": "promptSuffix",
+      "notes": "얼굴 디테일 금지(역광 실루엣). ref-character.png 미존재 — 실루엣이라 불필요, 체형·티셔츠만 일치."
+    },
+    {
+      "key": "K03b",
+      "kind": "image",
+      "for": [
+        "C3",
+        "C6"
+      ],
+      "prompt": "daylight, low angle looking straight up at a plain flat white ceiling, close-up of a man's hand with fingertips reaching a small faded yellowish plastic five-point star stuck to the ceiling, his thumbnail catching the lifted corner of the star, grey t-shirt sleeve at frame edge, another faded star softly out of focus nearby",
+      "suffix": "promptSuffix + ceilingNegative",
+      "notes": "손가락 5개·손톱 확인. C6 은 이 판의 노을 relight 를 시작 프레임으로 재사용(K06b)."
+    },
+    {
+      "key": "K03c",
+      "kind": "image",
+      "for": [
+        "C3"
+      ],
+      "prompt": "macro close-up, daylight, a man's thumb and index finger holding a small faded yellowish plastic five-point star turned over to show its back, the back is covered with several overlapping layers of old tape: a clear tape strip, a yellowed crinkled paper masking tape strip on top, and another cloudy tape piece over that, edges lifting, dust and tiny ceiling paint flakes stuck to the old adhesive, plain unprinted tape, shallow depth of field, white ceiling soft in background",
+      "suffix": "promptSuffix + 'plain unprinted tape, no text, no logo, no writing'",
+      "notes": "이 편의 핵심 정보 컷. 테이프가 '서로 다른 3종 · 다른 시기' 로 읽혀야 한다. 재시도 예산 5. 실패 시 실물 촬영 대체 고려(야광별 1개 + 테이프 3종, 폰 매크로 — 가장 싸고 확실)."
+    },
+    {
+      "key": "K04",
+      "kind": "image",
+      "for": [
+        "C4"
+      ],
+      "prompt": "night, dark small studio apartment, static wide shot from standing chest height in the room's far corner, wider than a corner view: the window wall with sheer white curtains, a wooden desk under the window with a small potted plant that alone catches a soft cool beam of street light from outside, the rest of the room in deep shadow, laptop closed, the plain flat white ceiling occupies the upper half of frame with seven small plastic stars faintly visible as pale shapes, bed out of frame, no clock visible",
+      "suffix": "promptSuffixLocked + ceilingNegative",
+      "notes": "화분은 프레임 하단에서 30~40% 높이(y ≈ 1150~1340px). 이 판 = 사그라든 뒤(거의 꺼짐) 상태."
+    },
+    {
+      "key": "K04g",
+      "kind": "image-edit|composite",
+      "from": "K04",
+      "for": [
+        "C4"
+      ],
+      "prompt": "identical image, the seven ceiling stars glow faintly pale green, soft and dim, no rays",
+      "notes": "K01g 와 같은 합성 레시피 권장. 두 번째 밤은 K04/K04g 를 2~3% 리프레임 + 커튼 쪽 그레이딩만 달리해 재사용(추가 생성 없음)."
+    },
+    {
+      "key": "K04c",
+      "kind": "image",
+      "for": [
+        "C4"
+      ],
+      "prompt": "night, macro close-up of a small digital desk clock on a wooden desk in a dark room, display lit with a dim blank glow, no digits, shallow depth of field",
+      "suffix": "promptSuffix",
+      "notes": "숫자 11:41 PM / 12:03 AM 은 편집 합성(화면 중앙). 두 인서트 모두 이 판 하나로."
+    },
+    {
+      "key": "K05",
+      "kind": "image",
+      "for": [
+        "C5"
+      ],
+      "prompt": "dawn, blue-grey light, close-up of a small potted plant on a wooden desk, on top of the dark soil lies a small faded yellowish plastic five-point star face down, its back with several overlapping layers of old clear and yellowed paper tape facing up, a few soil crumbs on it, plant leaves neutral",
+      "suffix": "promptSuffix",
+      "notes": "화분·별을 프레임 중앙~상단. 테이프 모양은 K03c 와 맞춘다(K03c 를 참조 이미지로)."
+    },
+    {
+      "key": "K05m",
+      "kind": "image-edit",
+      "from": "K05",
+      "for": [
+        "C5"
+      ],
+      "prompt": "identical image, soft neutral morning daylight instead of blue dawn light",
+      "notes": "새벽→아침 크로스페이드용 relight. 이후 img2vid 첫 프레임."
+    },
+    {
+      "key": "K06a",
+      "kind": "image",
+      "for": [
+        "C6"
+      ],
+      "prompt": "golden orange sunset light through sheer curtains, slightly high angle close-up of a wooden desk: a small plain unmarked paper bag, a fresh sheet of pale greenish-white plastic glow stars, and an old faded yellowish star lying face up showing its back with layered old tape, a man's two hands holding a freshly torn strip of clear tape above the old star",
+      "suffix": "promptSuffix + 'plain unmarked paper bag and sheet, no text, no logo, no barcode'",
+      "notes": "테이프 찢는 순간은 생략 — 이미 찢긴 조각을 든 손에서 시작해 '한 겹 더' 붙이는 동작만 영상화."
+    },
+    {
+      "key": "K06s",
+      "kind": "image-edit",
+      "from": "K06a",
+      "for": [
+        "C6"
+      ],
+      "prompt": "tight crop on the star sheet only, no hands, one star missing from the sheet leaving an empty star-shaped gap",
+      "notes": "'시트에서 새 별을 뗐다'를 손동작 없이 보여주는 1초 인서트."
+    },
+    {
+      "key": "K06d",
+      "kind": "image-edit",
+      "from": "K03b",
+      "for": [
+        "C6"
+      ],
+      "prompt": "same angle looking up at the ceiling, warm orange sunset light, no hand, the old faded yellowish star pressed flat back in its place and right next to it a new clean pale greenish-white plastic star, the new one visibly whiter and crisper",
+      "suffix": "ceilingNegative",
+      "notes": "C6 마지막 홀드 + C6 영상 끝 프레임. 옛 별/새 별 상대 위치를 K07d 와 맞춘다."
+    },
+    {
+      "key": "K06b",
+      "kind": "image-edit",
+      "from": "K06d",
+      "for": [
+        "C6"
+      ],
+      "prompt": "identical image but without the new star, a man's hand entering from below pressing the old star flat with his thumb",
+      "notes": "C6 영상 첫 프레임(끝 프레임 = K06d)."
+    }
+  ],
+  "shots": [
+    {
+      "id": "C1",
+      "seconds": 3.5,
+      "beat": "hook",
+      "description": "밤. 책상 옆 구석에서 벽-천장 모서리를 올려다보는 고정 와이드, 사람 없음. 아래쪽 스탠드 앰버빛(0–0.6s) → '딸깍' 하드컷 → 순검정 0.4s(0.6–1.0s) → 글로벌 노출 램프 1.5s(1.0–2.5s): 가장 밝은 별부터 가장 흐린 별(≈2.3s)까지 7개가 드러남 → 2.5–3.5s 정지 홀드",
+      "framing": "locked-off wide, camera chest height, tilted up ~35°; ceiling upper 2/3, desk edge + lamp + plant silhouette lower third (plant 30–40% from bottom)",
+      "lens": "24mm f/2.8",
+      "light": "night: amber desk lamp → off; dark plate faint pale-green star glow + thin cool window line on plant",
+      "motion": "none (still plates). Edit: hard cut amber→black, single global curve ramp on K01g",
+      "method": "ai",
+      "keyframe": [
+        "K01d",
+        "K01g"
+      ],
+      "reuse": null,
+      "overlay": null,
+      "plant": "silhouette in dark, one thin line of window light (same as C7)",
+      "sfx": "lamp switch click at 0.6s, then room tone",
+      "risk": "high — AI 야광 판이 과하게 빛나거나 별 모양/개수가 바뀜 → 합성 폴백(rules). 천장 선풍기·조명기구 출현 → ceilingNegative. '침대에서 올려다보는' 시점처럼 보이면 폐기(책상·스탠드가 프레임 안에 있어야 함)"
+    },
+    {
+      "id": "C2",
+      "seconds": 5.5,
+      "beat": "setup",
+      "description": "낮, 밝은 중성. 바닥의 테이프 감긴 무지 상자들 → 반쯤 빈 책상(노트북·시계·화분) → 천장으로 천천히 틸트 업. 천장엔 낮이라 거의 안 보이는 누렇게 바랜 별 7개, 책상(화분) 바로 위 하나가 비스듬히 들려 있다",
+      "framing": "vertical tilt from floor boxes (bottom) to ceiling (top); ends with stars upper-center, lifted star above desk",
+      "lens": "35mm f/2",
+      "light": "day: bright neutral window light",
+      "motion": "virtual tilt-up in edit over tall outpainted still K02t (pan bottom→top, ease in/out, scale 102→100%)",
+      "method": "ai",
+      "keyframe": [
+        "K02a",
+        "K02t"
+      ],
+      "reuse": null,
+      "overlay": null,
+      "plant": "neutral, on desk mid-frame during tilt",
+      "clock": "appearance 1/3 — passes in frame, display unreadable, no composited digits",
+      "sfx": "room tone, distant daytime street",
+      "risk": "medium — 아웃페인트 이음새·원근 왜곡(가상 틸트가 '팬'처럼 납작). 폴백: first/last-frame img2vid 1회(K02a → K02t 천장 크롭). 상자 글자 생성 위험 → plain unmarked"
+    },
+    {
+      "id": "C3",
+      "seconds": 7,
+      "beat": "turn",
+      "description": "① 0–1.5s 창을 등진 실루엣, 책상 의자에 올라섬(얼굴 역광으로 검게). ② 1.5–3.0s 올려다보는 손 클로즈업: 손톱으로 들린 별 가장자리를 떼어냄. ③ 3.0–5.5s 컷 온 액션 → 매크로: 뒤집힌 별 뒷면, 투명 테이프·누런 종이테이프·또 다른 테이프가 겹겹이. 손이 멈춤(1초 정지 포함). ④ 5.5–7.0s 엄지로 별을 제자리에 꾹 눌러 붙임",
+      "framing": "① medium silhouette knees-up, backlit; ② low angle straight up, hand + star upper-center; ③ macro, star back center; ④ = ② angle",
+      "lens": "① 35mm f/1.8; ②④ 35mm f/2; ③ macro 100mm-look f/2.8",
+      "light": "day: strong window backlight (①), bright neutral (②–④)",
+      "motion": "① img2vid 1.5s (step up); ② img2vid 1.5s (thumbnail lifts star, star comes off); ③ still K03c, slow push-in 100→104%, hold; ④ reuse ② clip reversed (star goes back) + last 6 frames held as thumb press, fallback new img2vid 1.5s",
+      "method": "ai",
+      "keyframe": [
+        "K03a",
+        "K03b",
+        "K03c"
+      ],
+      "reuse": "④ = ② 영상 역재생 재사용",
+      "overlay": null,
+      "plant": null,
+      "sfx": "chair creak ①, soft tape peel ②, silence ③, faint press ④",
+      "risk": "high — ③ 테이프 레이어 매크로가 핵심 정보: AI가 테이프를 단일층·깔끔하게 그리거나 인쇄 글자를 넣음 → 재시도 5, 폴백 실물 매크로 촬영. ② 손가락 수·손톱이 별을 뚫는 변형. ④ 역재생이 부자연스러우면 새 영상 1회. ① 얼굴 디테일 노출 금지"
+    },
+    {
+      "id": "C4",
+      "seconds": 7,
+      "beat": "time passes",
+      "description": "밤, 같은 날들의 반복. 0–0.5s 시계 인서트 11:41 PM. 0.5–3.3s 넓은 고정 앵글: 어두운 방, 책상 위 화분만 창밖 가로등빛, 천장의 별 7개가 서서히 흐려져 거의 꺼짐. 3.3–3.8s 시계 인서트 12:03 AM. 3.8–7.0s 디졸브로 다른 밤 — 같은 사그라듦 한 번 더(리프레임·그레이딩만 다름)",
+      "framing": "locked-off wide from room's far corner, chest height; ceiling upper half, window+desk lower-middle, plant 30–40% above bottom edge; clock inserts macro, digits center",
+      "lens": "24mm f/2.8 (wide); macro look for clock",
+      "light": "night: no lamp; cool street light only on plant; faint pale-green star glow decaying",
+      "motion": "none. Edit: K04g→K04 crossfade 2.5s (night 1), 1s dissolve, K04g→K04 crossfade 2.5s with 3% reframe + cooler grade (night 2)",
+      "method": "ai",
+      "keyframe": [
+        "K04",
+        "K04g",
+        "K04c"
+      ],
+      "reuse": "K04/K04g 두 밤에 재사용, K04c 시계 판 2회 재사용",
+      "overlay": "clock: 11:41 PM (0–0.5s), 12:03 AM (3.3–3.8s)",
+      "plant": "only the plant catches window street light — loneliness",
+      "clock": "appearances 2–3/3",
+      "sfx": "night room tone, distant car once; no tick",
+      "risk": "medium — 와이드에 침대가 들어오거나 '누워서 보는' 시점처럼 보임 → 폐기. 화분이 하단 25%로 내려감 → 크롭 검수. 별이 하나씩 꺼지는 것처럼 보이지 않게 전체 동시 감쇠"
+    },
+    {
+      "id": "C5",
+      "seconds": 6,
+      "beat": "plant",
+      "description": "새벽→아침(푸른 회색→중성). 화분 클로즈업: 흙 위에 별 하나가 엎어져 있고 뒷면 겹겹 테이프가 위를 향함. 0–3.0s 빛만 변함. 3.0–6.0s 손가락이 들어와 별을 집어 올리고 흙 부스러기가 떨어짐",
+      "framing": "close-up, slightly high angle; pot + star center-upper",
+      "lens": "50mm f/1.8",
+      "light": "dawn blue-grey → neutral morning",
+      "motion": "0–3s still K05→K05m crossfade + slow push 100→103%; 3–6s img2vid 3s from K05m (fingers pick up star)",
+      "method": "ai",
+      "keyframe": [
+        "K05",
+        "K05m"
+      ],
+      "reuse": "K03c 테이프 디자인 참조",
+      "overlay": null,
+      "plant": "old star fallen on the soil — first overlap of previous tenant and him",
+      "sfx": "morning birds faint, soil crumbs tick",
+      "risk": "medium — 손가락이 별을 집는 순간 별 형태 붕괴·흙 물리 이상. 실패 시 집어 들기 직전에서 컷하고 C6 첫 프레임(손에 든 별)으로 연결"
+    },
+    {
+      "id": "C6",
+      "seconds": 9,
+      "beat": "resolution",
+      "description": "노을, 주황. 0–3.0s 책상: 글자 없는 종이봉투, 새 별 시트, 뒷면이 위로 온 옛 별 — 손이 새로 찢은 테이프 조각을 옛 별 뒷면에 한 겹 더 붙임. 3.0–4.0s 인서트: 시트에 별 하나 빠진 자리. 4.0–7.5s 의자 위, 올려다보는 각도: 엄지로 옛 별을 제자리에 다시 누르고, 그 옆에 새 별을 누름. 7.5–9.0s 손이 빠지고 낡은 별과 새 별이 나란히(새 별이 하얗고 선명) 홀드",
+      "framing": "desk high-angle close-up (0–3s); tight sheet insert; low angle straight up at ceiling, stars upper-center (4–9s)",
+      "lens": "35mm f/1.8; 50mm for insert",
+      "light": "sunset: warm orange through curtains",
+      "motion": "img2vid 3s from K06a (tape strip applied); still K06s; img2vid 3.5s first frame K06b → last frame K06d; still K06d hold",
+      "method": "ai",
+      "keyframe": [
+        "K06a",
+        "K06s",
+        "K06b",
+        "K06d"
+      ],
+      "reuse": "K06d/K06b = K03b 앵글의 노을 relight 편집(새 생성 아님)",
+      "overlay": null,
+      "plant": null,
+      "sfx": "tape tear (sound only, before cut), paper bag rustle, soft press x2",
+      "risk": "high — 두 손 + 테이프 조각(손가락·투명 테이프 물리). 4–7.5s 한 영상에서 두 번 누르기 → 실패 시 2개로 나눠 '옛 별 누르기'(C3④ 클립 노을 그레이딩 재사용) + '새 별 누르기'(새 영상)로. 봉투·시트 글자 생성 위험"
+    },
+    {
+      "id": "C7",
+      "seconds": 6.5,
+      "beat": "ending / loop",
+      "description": "밤, C1과 완전히 같은 구도. 0–1.0s 스탠드 앰버빛(별 8개 — 새 별이 하얗게) → '딸깍' → 순검정 0.4s(1.0–1.4s) → 1.5s 글로벌 램프(1.4–2.9s): 같은 희미한 일곱 점 + 조금 더 밝은 여덟 번째 점(가장 먼저 보임) → 2.9–6.5s 홀드. 아래 화분 윤곽에 창빛 한 줄",
+      "framing": "identical to C1 (locked-off)",
+      "lens": "24mm f/2.8",
+      "light": "night: amber lamp → off; faint glow, 8th star slightly brighter",
+      "motion": "none. Same edit recipe/curve preset as C1 (copy the ramp keyframes)",
+      "method": "library",
+      "keyframe": [
+        "K07d",
+        "K07g"
+      ],
+      "reuse": "C1 판 K01d/K01g 의 image-edit(또는 합성 매트 +1) — 새 생성 없음",
+      "overlay": null,
+      "plant": "silhouette with one thin line of window light — alone, but less alone",
+      "sfx": "lamp click at 1.0s, then near silence",
+      "risk": "medium — image-edit 이 다른 픽셀까지 바꿔 루프 이음새가 튐 → difference 검사, 실패 시 합성 매트 추가 방식. 새 별이 과하게 밝으면 마법처럼 보임(≤1.6×)"
+    },
+    {
+      "id": "END",
+      "seconds": 3,
+      "beat": "last line",
+      "description": "검은 화면 단독 문구 카드. 이후 C1 으로 루프",
+      "framing": "black frame, text center slightly above",
+      "lens": "-",
+      "light": "-",
+      "motion": "fade in text 0.3s, hold ≥2.5s",
+      "method": "library",
+      "keyframe": null,
+      "reuse": "편집 전용 카드(생성 없음)",
+      "overlay": "Someone needed stars here before I did.",
+      "plant": null,
+      "sfx": "silence",
+      "risk": "none"
+    }
+  ],
+  "summary": {
+    "cuts": 8,
+    "videoCuts": 7,
+    "totalSeconds": 47.5,
+    "secondsCheck": "3.5 + 5.5 + 7.0 + 7.0 + 6.0 + 9.0 + 6.5 + 3.0 = 47.5 (script 약 47.5초 일치)",
+    "methods": {
+      "ai": 6,
+      "library": 2,
+      "blender": 0
+    },
+    "reusedKeyframes": [
+      "K01d/K01g → K07d/K07g (C1 → C7 루프, edit만)",
+      "K04/K04g (C4 두 밤), K04c (시계 인서트 ×2)",
+      "K03b → K06d/K06b (C3 앵글의 노을 relight)",
+      "C3② 영상 역재생 → C3④",
+      "K03c 테이프 디자인 → K05·K06a 참조"
+    ],
+    "clockInserts": 3,
+    "imageGenerations": {
+      "new": 9,
+      "newList": [
+        "K01d",
+        "K02a",
+        "K03a",
+        "K03b",
+        "K03c",
+        "K04",
+        "K04c",
+        "K05",
+        "K06a"
+      ],
+      "edits": 9,
+      "editList": [
+        "K01g",
+        "K07d",
+        "K07g",
+        "K02t (outpaint)",
+        "K04g",
+        "K05m",
+        "K06s",
+        "K06d",
+        "K06b"
+      ],
+      "note": "새 생성 9장(K01d, K02a, K03a, K03b, K03c, K04, K04c, K05, K06a) + edit 9건. K01g/K04g/K07g 는 합성 폴백 시 edit 0건(무료). 기준 이미지 ref-character/ref-room 은 이 편에서 필수 아님(얼굴 없음) — ref-room 이 있으면 K01d·K02a·K04 참조로 사용"
+    },
+    "videoGenerations": {
+      "count": 5,
+      "list": [
+        "C3① 실루엣 1.5s",
+        "C3② 별 떼기 1.5s",
+        "C5 별 집기 3s",
+        "C6a 테이프 한 겹 3s",
+        "C6c 옛 별·새 별 누르기 3.5s"
+      ],
+      "fallbacks": [
+        "C3④ 새 영상(역재생 실패 시)",
+        "C2 img2vid 틸트(가상 틸트 실패 시)",
+        "C6c 2분할 시 +1"
+      ],
+      "noVideo": [
+        "C1 (stills + edit ramp)",
+        "C2 (outpaint 가상 틸트)",
+        "C3③ (still push)",
+        "C4 (stills + crossfade)",
+        "C5 0–3s (relight crossfade)",
+        "C6 insert/hold",
+        "C7 (stills + edit ramp)",
+        "END"
+      ]
+    },
+    "costEstimate": "평균 재시도 2.5 기준 — 새 이미지 9 × 2.5 ≈ 23회(K03c 는 5회 예산), image-edit 9 × 2.5 ≈ 23회(합성 폴백 쓰면 −7), 영상 5 × 2.5 ≈ 13회(+폴백 최대 3)",
+    "topRisks": [
+      "야광 판 과발광 — AI가 별을 네온·별빛 스파이크로 그리거나 개수·위치를 바꿈. 대응: 앰버 판 1장을 마스터로, 어둠 판은 합성(정적 매트 + 옅은 발광) 우선, 단일 글로벌 램프",
+      "C3③ 테이프 레이어 매크로 — 겹겹 3종 테이프가 이 이야기의 전환. AI가 단일층·인쇄 글자·별 형태 붕괴를 낼 위험. 재시도 5, 폴백은 실물 매크로 1컷 촬영",
+      "손 동작 3종(C3② 별 떼기, C6a 테이프 붙이기, C6c 두 번 누르기) — 손가락 수·투명 테이프 물리. 동작을 1개씩만, 첫/끝 프레임 지정, 실패 시 분할",
+      "C1↔C7 루프 정렬 — image-edit 이 다른 픽셀을 바꾸면 이음새가 튐. difference 블렌드 검수, 같은 램프 프리셋 복사",
+      "천장 선풍기·조명기구·창밖 진짜 별하늘·별자리 배치·침대 누운 시점 — 모든 천장 판에 ceilingNegative, 카메라 높이·책상/스탠드 프레임 인으로 차단. 시계는 C2 1 + C4 2 외 프레임에서 제외"
+    ]
+  }
+}

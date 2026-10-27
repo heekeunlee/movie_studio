@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T14:09:28.177Z",
+  "generatedAt": "2026-10-27T14:27:23.210Z",
   "studioTitle": "QUIET FRAMES STUDIO",
   "rooms": [
     {
@@ -369,9 +369,9 @@
       "color": "#3B36C4",
       "room": "writers",
       "model": "sonnet",
-      "status": "idle",
-      "ep": null,
-      "note": ""
+      "status": "done",
+      "ep": "ep02",
+      "note": "'1%.' 🔴 탈락(Reel Life·Dancin' Man 전제 동일) · 추천: the ceiling. (야광별, 위험 하)"
     },
     {
       "id": "writer",
@@ -391,9 +391,9 @@
       "color": "#8A5A2B",
       "room": "writers",
       "model": "sonnet",
-      "status": "idle",
-      "ep": null,
-      "note": ""
+      "status": "done",
+      "ep": "ep02",
+      "note": "FIX 반영 완료 — 제목 left up., C1 램프·C4 7s 등, PASS 처리"
     },
     {
       "id": "director",
@@ -402,9 +402,9 @@
       "color": "#1F1F1F",
       "room": "writers",
       "model": "opus",
-      "status": "idle",
-      "ep": null,
-      "note": ""
+      "status": "done",
+      "ep": "ep02",
+      "note": "8컷(7+END) · 47.5초 · ai 6/library 2/reuse C1→C7 · 새 이미지 9·edit 9·영상 5"
     },
     {
       "id": "dop",
@@ -531,16 +531,39 @@
   "episodes": [
     {
       "id": "ep02",
-      "title": "1%.",
-      "stage": "research",
-      "status": "waiting",
-      "agent": "scout",
-      "note": "대기",
-      "updatedAt": "2026-10-27T14:09:28.120Z",
-      "retries": {},
-      "progress": 0.03125,
+      "title": "left up.",
+      "stage": "shotlist",
+      "status": "done",
+      "agent": "director",
+      "note": "8컷(7+END) · 47.5초 · ai 6/library 2/reuse C1→C7 · 새 이미지 9·edit 9·영상 5",
+      "updatedAt": "2026-10-27T14:27:23.161Z",
+      "retries": {
+        "script": 1
+      },
+      "progress": 0.25,
       "links": {},
-      "stageLog": {}
+      "stageLog": {
+        "research": {
+          "status": "done",
+          "note": "'1%.' 🔴 탈락(Reel Life·Dancin' Man 전제 동일) · 추천: the ceiling. (야광별, 위험 하)",
+          "at": "2026-10-27T14:15:21.878Z"
+        },
+        "script": {
+          "status": "retry",
+          "note": "검수 FIX 반영 중",
+          "at": "2026-10-27T14:23:11.593Z"
+        },
+        "check": {
+          "status": "done",
+          "note": "FIX 반영 완료 — 제목 left up., C1 램프·C4 7s 등, PASS 처리",
+          "at": "2026-10-27T14:23:21.600Z"
+        },
+        "shotlist": {
+          "status": "done",
+          "note": "8컷(7+END) · 47.5초 · ai 6/library 2/reuse C1→C7 · 새 이미지 9·edit 9·영상 5",
+          "at": "2026-10-27T14:27:23.161Z"
+        }
+      }
     },
     {
       "id": "ep01",
@@ -596,6 +619,106 @@
   ],
   "log": [
     {
+      "stage": "shotlist",
+      "status": "done",
+      "agent": "director",
+      "note": "8컷(7+END) · 47.5초 · ai 6/library 2/reuse C1→C7 · 새 이미지 9·edit 9·영상 5",
+      "at": "2026-10-27T14:27:23.161Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "감독"
+    },
+    {
+      "stage": "shotlist",
+      "status": "working",
+      "agent": "director",
+      "note": "컷 분할·렌즈·조명 설계 중",
+      "at": "2026-10-27T14:23:56.090Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "감독"
+    },
+    {
+      "stage": "check",
+      "status": "done",
+      "agent": "checker",
+      "note": "FIX 반영 완료 — 제목 left up., C1 램프·C4 7s 등, PASS 처리",
+      "at": "2026-10-27T14:23:21.600Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "표절·정책 검수"
+    },
+    {
+      "stage": "script",
+      "status": "retry",
+      "agent": "writer",
+      "note": "검수 FIX 반영 중",
+      "at": "2026-10-27T14:23:11.593Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "시나리오 작가"
+    },
+    {
+      "stage": "check",
+      "status": "done",
+      "agent": "checker",
+      "note": "FIX — 독창성 통과(동일 상황+전환+결말 못 찾음). 제목 동명 칸 단편 Katto→'left up.' 권장, C1 램프·C4 단축·천장 선풍기 네거티브",
+      "at": "2026-10-27T14:22:39.287Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "표절·정책 검수"
+    },
+    {
+      "stage": "check",
+      "status": "working",
+      "agent": "checker",
+      "note": "독창성·정책 검수 중",
+      "at": "2026-10-27T14:17:58.387Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "표절·정책 검수"
+    },
+    {
+      "stage": "script",
+      "status": "done",
+      "agent": "writer",
+      "note": "7컷+엔드·약 49.5초·훅: 스탠드 꺼짐→천장에 희미한 야광별 7개(무음 OK, 폰·얼굴 0)",
+      "at": "2026-10-27T14:17:27.678Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "시나리오 작가"
+    },
+    {
+      "stage": "script",
+      "status": "working",
+      "agent": "writer",
+      "note": "the ceiling. 초안 작성 중",
+      "at": "2026-10-27T14:15:58.478Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "시나리오 작가"
+    },
+    {
+      "stage": "research",
+      "status": "done",
+      "agent": "scout",
+      "note": "'1%.' 🔴 탈락(Reel Life·Dancin' Man 전제 동일) · 추천: the ceiling. (야광별, 위험 하)",
+      "at": "2026-10-27T14:15:21.878Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "트렌드 리서처"
+    },
+    {
+      "stage": "research",
+      "status": "working",
+      "agent": "scout",
+      "note": "독창성 검증 — 유사 작품 검색 중",
+      "at": "2026-10-27T14:09:32.102Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "트렌드 리서처"
+    },
+    {
       "stage": "keyframes",
       "status": "waiting",
       "agent": "keyframe",
@@ -644,96 +767,6 @@
       "ep": "ep01",
       "title": "call mom.",
       "who": "촬영감독"
-    },
-    {
-      "stage": "shotlist",
-      "status": "done",
-      "agent": "director",
-      "note": "9컷(영상 8+문구 카드) · 49.5초 · ai 6/library 3(C4·C8·END)/blender 0 · 이미지 13·영상 9 생성",
-      "at": "2026-10-27T13:32:54.456Z",
-      "ep": "ep01",
-      "title": "call mom.",
-      "who": "감독"
-    },
-    {
-      "stage": "shotlist",
-      "status": "working",
-      "agent": "director",
-      "note": "컷 분할·렌즈·조명 설계 중",
-      "at": "2026-10-27T13:31:12.686Z",
-      "ep": "ep01",
-      "title": "call mom.",
-      "who": "감독"
-    },
-    {
-      "stage": "check",
-      "status": "done",
-      "agent": "checker",
-      "note": "FIX 반영 완료 — R1·R2 수정, PASS 처리",
-      "at": "2026-10-27T13:30:52.432Z",
-      "ep": "ep01",
-      "title": "call mom.",
-      "who": "표절·정책 검수"
-    },
-    {
-      "stage": "script",
-      "status": "retry",
-      "agent": "writer",
-      "note": "검수 FIX 반영 중",
-      "at": "2026-10-27T13:30:45.818Z",
-      "ep": "ep01",
-      "title": "call mom.",
-      "who": "시나리오 작가"
-    },
-    {
-      "stage": "check",
-      "status": "done",
-      "agent": "checker",
-      "note": "FIX — 경미: 부재중 3→2통, C7 침대→책상 동선 한 문장. 시계 인서트·따뜻한 결말은 허용",
-      "at": "2026-10-27T13:30:12.339Z",
-      "ep": "ep01",
-      "title": "call mom.",
-      "who": "표절·정책 검수"
-    },
-    {
-      "stage": "check",
-      "status": "working",
-      "agent": "checker",
-      "note": "유사 작품·정책 대조 중",
-      "at": "2026-10-27T13:28:30.862Z",
-      "ep": "ep01",
-      "title": "call mom.",
-      "who": "표절·정책 검수"
-    },
-    {
-      "stage": "script",
-      "status": "done",
-      "agent": "writer",
-      "note": "컷 8개·약 49초·훅: 울리는 'mom' 폰을 보지도 않고 엎음 → 자정 직전 다시 걸자 첫 신호 전에 받음, C8→C1 루프",
-      "at": "2026-10-27T13:28:04.328Z",
-      "ep": "ep01",
-      "title": "call mom.",
-      "who": "시나리오 작가"
-    },
-    {
-      "stage": "script",
-      "status": "working",
-      "agent": "writer",
-      "note": "시나리오 초안 작성 중",
-      "at": "2026-10-27T13:27:12.962Z",
-      "ep": "ep01",
-      "title": "call mom.",
-      "who": "시나리오 작가"
-    },
-    {
-      "stage": "research",
-      "status": "done",
-      "agent": "scout",
-      "note": "확정안(bible/episodes-plan.md)에서 시작 — 리서치 생략",
-      "at": "2026-10-27T11:49:38.339Z",
-      "ep": "ep01",
-      "title": "call mom.",
-      "who": "트렌드 리서처"
     }
   ],
   "gate": null,

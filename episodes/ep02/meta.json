@@ -1,13 +1,86 @@
 {
   "id": "ep02",
-  "title": "1%.",
+  "title": "left up.",
   "createdAt": "2026-10-27T14:09:28.120Z",
-  "updatedAt": "2026-10-27T14:09:28.120Z",
-  "stage": "research",
-  "status": "waiting",
-  "agent": "scout",
-  "note": "대기",
-  "retries": {},
+  "updatedAt": "2026-10-27T14:27:23.161Z",
+  "stage": "shotlist",
+  "status": "done",
+  "agent": "director",
+  "note": "8컷(7+END) · 47.5초 · ai 6/library 2/reuse C1→C7 · 새 이미지 9·edit 9·영상 5",
+  "retries": {
+    "script": 1
+  },
   "links": {},
-  "history": []
+  "history": [
+    {
+      "stage": "research",
+      "status": "working",
+      "agent": "scout",
+      "note": "독창성 검증 — 유사 작품 검색 중",
+      "at": "2026-10-27T14:09:32.102Z"
+    },
+    {
+      "stage": "research",
+      "status": "done",
+      "agent": "scout",
+      "note": "'1%.' 🔴 탈락(Reel Life·Dancin' Man 전제 동일) · 추천: the ceiling. (야광별, 위험 하)",
+      "at": "2026-10-27T14:15:21.878Z"
+    },
+    {
+      "stage": "script",
+      "status": "working",
+      "agent": "writer",
+      "note": "the ceiling. 초안 작성 중",
+      "at": "2026-10-27T14:15:58.478Z"
+    },
+    {
+      "stage": "script",
+      "status": "done",
+      "agent": "writer",
+      "note": "7컷+엔드·약 49.5초·훅: 스탠드 꺼짐→천장에 희미한 야광별 7개(무음 OK, 폰·얼굴 0)",
+      "at": "2026-10-27T14:17:27.678Z"
+    },
+    {
+      "stage": "check",
+      "status": "working",
+      "agent": "checker",
+      "note": "독창성·정책 검수 중",
+      "at": "2026-10-27T14:17:58.387Z"
+    },
+    {
+      "stage": "check",
+      "status": "done",
+      "agent": "checker",
+      "note": "FIX — 독창성 통과(동일 상황+전환+결말 못 찾음). 제목 동명 칸 단편 Katto→'left up.' 권장, C1 램프·C4 단축·천장 선풍기 네거티브",
+      "at": "2026-10-27T14:22:39.287Z"
+    },
+    {
+      "stage": "script",
+      "status": "retry",
+      "agent": "writer",
+      "note": "검수 FIX 반영 중",
+      "at": "2026-10-27T14:23:11.593Z"
+    },
+    {
+      "stage": "check",
+      "status": "done",
+      "agent": "checker",
+      "note": "FIX 반영 완료 — 제목 left up., C1 램프·C4 7s 등, PASS 처리",
+      "at": "2026-10-27T14:23:21.600Z"
+    },
+    {
+      "stage": "shotlist",
+      "status": "working",
+      "agent": "director",
+      "note": "컷 분할·렌즈·조명 설계 중",
+      "at": "2026-10-27T14:23:56.090Z"
+    },
+    {
+      "stage": "shotlist",
+      "status": "done",
+      "agent": "director",
+      "note": "8컷(7+END) · 47.5초 · ai 6/library 2/reuse C1→C7 · 새 이미지 9·edit 9·영상 5",
+      "at": "2026-10-27T14:27:23.161Z"
+    }
+  ]
 }

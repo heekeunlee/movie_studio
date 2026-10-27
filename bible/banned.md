@@ -16,6 +16,7 @@
 ## 제목
 - "unsent" — The Unsent Project 와 겹침
 - "Small Hours" — 동명 단편 다수
+- "the ceiling" — Teppo Airaksinen *Katto (The Ceiling)* 칸 2017 단편 특별언급 외 동명작 다수 (ep02 검수)
 
 ## 설정
 - 엄마의 부재중 전화를 겁주는 결말("언젠가 전화가 끊긴다") — Sunfeast #NoMoreMissedCallsFromMom 등 광고에서 포화
@@ -30,3 +31,22 @@
 - Verizon "Call Mom" (R/GA) — 아이들이 평생 "mom"을 부르는 몽타주 구성 금지
 - Coca-Cola "Inseparable" (2015) — "give Mom the gift she wants most. Call her." 문구·변형 금지
 - 엄마가 문자로 수긍한 뒤 또 거는 연속 부재중(조급·불안한 엄마) — '겁주는 부재중' 톤으로 기울어 피한다
+
+## 독창성 감사에서 추가 (ep07–10, 2026-10-27) — 근거: reports/originality/ep07-10.md
+- 마지막 문구 "Day one." 및 "One day or day one" 변형
+- 읽음 표시 후 답장을 기다리는 밤 (Left on Read, Seeing Read 등 단편 다수)
+- 구석에 먼지 쌓인 악기 = 포기한 꿈 (스톡 영상 수준의 상투)
+- 늦게 돌아온 빈 방의 외로움 (전환 없는 솔로 귀가)
+- 주인이 떠난 빈 방에서 화분이 꽃 피는 마지막 컷 (In Full Bloom, 2019)
+- 사람 = 빛을 향해 기우는 식물 은유 (Velux "Once You See It", 2022)
+
+## 참고 — ep02 검수에서 확인한 인접 작품 (야광별)
+- VELUX "Starstruck" (Twenty, 2024) — 아이 방 야광별을 진짜 하늘(천창)로 바꾸는 결말. 야광별 → 진짜 밤하늘 교체·창밖 별 엔딩 금지 https://www.shots.net/news/view/velux-shoots-for-the-stars
+- 시 "The Astronomer's Room" (Jacob Gamage) — 전 거주자가 붙인 야광 스티커 아래 누워 그 사람('그녀')을 상상. 침대에 누워 전 거주자를 상상·의인화하는 구도 금지
+- Marcia Youngman "I Share the Stars" (CSMonitor, 1986) — 남의 천장 별을 보고 자기 방에 별자리를 붙임. 별자리 배치·천문 지식 전개 피함
+- '전 거주자가 남긴 야광별'은 경험담·시·SNS에 흔한 정서(주제 수준) — 겹겹 테이프·옆에 하나 추가 같은 구체 장치로만 차별화된다
+
+## 독창성 감사에서 추가 (ep03–06, 2026-10-27) — 근거: reports/originality/ep03-06.md
+- 문구: "You snooze, you lose" (Specsavers 2025) · "I'm fine"을 반복하는 캠페인 구성 (Wellbeing Plus "I'm Fine", J&J "Generation Fine")
+- 설정: 폰에서 메시지를 썼다 지우는 "unsent" 구성 · 스누즈 버튼을 더듬는 손 · 새 운동화와 운동 미루기 · 윗집 소음에 잠 못 드는 남자 (Hoegg "Upstairs") · 창문에 갇힌 파리 · 잊어서 식은 커피/차
+- **화분 모티프 주의**: "Where Light Falls" (Shantanu Goswami, 2026, 대사 없는 남자와 시든 화분) — 화분이 빛을 찾아 사람을 바꾸는 구성은 시리즈 전체에서 금지. 화분은 '곁에 있는 소품'으로만 쓴다
