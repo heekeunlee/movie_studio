@@ -1,0 +1,21 @@
+{
+  "id": "ep01",
+  "title": "call mom.",
+  "createdAt": "2026-10-27T11:49:38.295Z",
+  "updatedAt": "2026-10-27T11:49:38.339Z",
+  "stage": "research",
+  "status": "done",
+  "agent": "scout",
+  "note": "확정안(bible/episodes-plan.md)에서 시작 — 리서치 생략",
+  "retries": {},
+  "links": {},
+  "history": [
+    {
+      "stage": "research",
+      "status": "done",
+      "agent": "scout",
+      "note": "확정안(bible/episodes-plan.md)에서 시작 — 리서치 생략",
+      "at": "2026-10-27T11:49:38.339Z"
+    }
+  ]
+}

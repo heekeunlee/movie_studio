@@ -1,0 +1,13 @@
+# 영상·이미지·음원은 저장소에 넣지 않는다 (드라이브/유튜브 링크로만 연결)
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.png
+*.jpg
+*.jpeg
+*.webp
+!site/**/*.png
+.env
+node_modules/
+.DS_Store
