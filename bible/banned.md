@@ -50,3 +50,21 @@
 - 문구: "You snooze, you lose" (Specsavers 2025) · "I'm fine"을 반복하는 캠페인 구성 (Wellbeing Plus "I'm Fine", J&J "Generation Fine")
 - 설정: 폰에서 메시지를 썼다 지우는 "unsent" 구성 · 스누즈 버튼을 더듬는 손 · 새 운동화와 운동 미루기 · 윗집 소음에 잠 못 드는 남자 (Hoegg "Upstairs") · 창문에 갇힌 파리 · 잊어서 식은 커피/차
 - **화분 모티프 주의**: "Where Light Falls" (Shantanu Goswami, 2026, 대사 없는 남자와 시든 화분) — 화분이 빛을 찾아 사람을 바꾸는 구성은 시리즈 전체에서 금지. 화분은 '곁에 있는 소품'으로만 쓴다
+
+## 참고 — ep03 교차 검증에서 확인한 인접 작품 (단추) — 근거: reports/originality/cross-ep03.md
+- 제목: "the button" / "Button" — Soyuzmultfilm *Button* (1982), 체코 *The Button*, *Black Button* (2007), Sky "Button" (2016) 등 동명작 다수
+- *Button and Flower* (Elad Weizman, 2020, 대사 없음) — 외출 전 서둘러 단추를 꿰매다 바늘에 찔려 핏자국이 꽃이 되는 결말. 바늘에 찔림·피·얼룩, 셔츠 입고 거리로 나가는 엔딩 금지
+
+## 교차 검증에서 추가 (ep06 「the cast.」, 2026-10-28) — 근거: reports/originality/cross-ep06.md
+- 설정: 도움을 거부하고 엉뚱한 편법으로 버티다 결국 도움을 청하는 코미디 몽타주 (Out of Reach, Cosmo Rudd, 2024) — 편법은 짧게, 웃기지 않게
+- 문구: "Not every knot is easy to untie" / "He won't ask first" (CCMF, 2026) 및 매듭=남자의 도움 요청 은유
+- 문구: "Don't bottle it up" / #DontBottleItUp (CALM × Topman) 변형
+- 연출: 도움을 준 이웃이 깁스에 사인·그림을 남기는 결말 (예측 가능)
+- 문형 주의: "The ___ was never the hard part." 는 ep06에서 쓰므로 다른 편에서 반복하지 않는다
+
+## 교차 검증에서 추가 제안 (ep08, 2026-10-28) — 근거: reports/originality/cross-ep08.md
+- 문구: "Am I becoming (the son of) my father?" / "I'm turning into my dad" 류 (CSMonitor Andreae 에세이 2002 등, 포화)
+- 설정: 고인 부모의 손글씨(유품·장보기 목록·레시피 카드)를 발견하고 그리워하는 결말 (Green "My Mother's Handwritten Grocery Lists" VQR 2024, Al Jazeera "My father's handwriting" 2022, 뉴스토마토 「아버지의 글씨」 2021)
+- 설정: 내 서명이 아버지 서명과 같다는 발견 (포럼 경험담 다수, 상투)
+- 연출: 사진·거울 속 얼굴이 아버지를 닮았다는 컷 (Sherman Alexie "Inheritance" 2023, TikTok Dad Similarity 트렌드)
+
