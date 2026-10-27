@@ -2,47 +2,264 @@
   "$comment": "스튜디오 로스터 단일 원본. 에이전트 정의·오피스 화면·상태 생성기가 모두 이 파일을 기준으로 삼습니다.",
   "studioTitle": "QUIET FRAMES STUDIO",
   "rooms": [
-    { "id": "writers", "name": "작가실",        "emoji": "📝" },
-    { "id": "stage",   "name": "촬영 스테이지", "emoji": "🎥" },
-    { "id": "sound",   "name": "사운드 부스",   "emoji": "🔊" },
-    { "id": "edit",    "name": "편집실",        "emoji": "✂️" },
-    { "id": "screen",  "name": "상영실",        "emoji": "🎞" },
-    { "id": "release", "name": "배포 데스크",   "emoji": "📈" }
+    {
+      "id": "writers",
+      "name": "작가실",
+      "emoji": "📝"
+    },
+    {
+      "id": "stage",
+      "name": "촬영 스테이지",
+      "emoji": "🎥"
+    },
+    {
+      "id": "sound",
+      "name": "사운드 부스",
+      "emoji": "🔊"
+    },
+    {
+      "id": "edit",
+      "name": "편집실",
+      "emoji": "✂️"
+    },
+    {
+      "id": "screen",
+      "name": "상영실",
+      "emoji": "🎞"
+    },
+    {
+      "id": "release",
+      "name": "배포 데스크",
+      "emoji": "📈"
+    }
   ],
   "agents": [
-    { "id": "scout",     "name": "트렌드 리서처", "emoji": "🔭", "color": "#3B36C4", "room": "writers", "model": "sonnet" },
-    { "id": "writer",    "name": "시나리오 작가", "emoji": "✍️", "color": "#CE4A34", "room": "writers", "model": "opus" },
-    { "id": "checker",   "name": "표절·정책 검수", "emoji": "🔍", "color": "#8A5A2B", "room": "writers", "model": "sonnet" },
-    { "id": "director",  "name": "감독",          "emoji": "🎬", "color": "#1F1F1F", "room": "writers", "model": "opus" },
-    { "id": "dop",       "name": "촬영감독",      "emoji": "📷", "color": "#2E7D6B", "room": "stage",   "model": "sonnet" },
-    { "id": "keyframe",  "name": "키프레임 작가", "emoji": "🖼", "color": "#C2185B", "room": "stage",   "model": "sonnet" },
-    { "id": "animator",  "name": "영상 생성 담당", "emoji": "🎞", "color": "#6A4FB3", "room": "stage",   "model": "haiku" },
-    { "id": "blender",   "name": "3D 아티스트",   "emoji": "🧊", "color": "#E07B00", "room": "stage",   "model": "sonnet" },
-    { "id": "sound",     "name": "사운드 디자이너", "emoji": "🎧", "color": "#00838F", "room": "sound",   "model": "sonnet" },
-    { "id": "editor",    "name": "편집기사",      "emoji": "✂️", "color": "#5D6D7E", "room": "edit",    "model": "sonnet" },
-    { "id": "colorist",  "name": "컬러리스트",    "emoji": "🎨", "color": "#B8860B", "room": "edit",    "model": "haiku" },
-    { "id": "critic",    "name": "QA 크리틱",     "emoji": "🧐", "color": "#7B1F1F", "room": "screen",  "model": "opus" },
-    { "id": "packager",  "name": "패키징 매니저", "emoji": "📦", "color": "#3C8D2F", "room": "release", "model": "sonnet" },
-    { "id": "publisher", "name": "퍼블리셔",      "emoji": "🚀", "color": "#1565C0", "room": "release", "model": "haiku" },
-    { "id": "analyst",   "name": "데이터 분석가", "emoji": "📊", "color": "#455A64", "room": "release", "model": "sonnet" }
+    {
+      "id": "scout",
+      "name": "트렌드 리서처",
+      "emoji": "🔭",
+      "color": "#3B36C4",
+      "room": "writers",
+      "model": "sonnet"
+    },
+    {
+      "id": "writer",
+      "name": "시나리오 작가",
+      "emoji": "✍️",
+      "color": "#CE4A34",
+      "room": "writers",
+      "model": "opus"
+    },
+    {
+      "id": "checker",
+      "name": "표절·정책 검수",
+      "emoji": "🔍",
+      "color": "#8A5A2B",
+      "room": "writers",
+      "model": "sonnet"
+    },
+    {
+      "id": "director",
+      "name": "감독",
+      "emoji": "🎬",
+      "color": "#1F1F1F",
+      "room": "writers",
+      "model": "opus"
+    },
+    {
+      "id": "dop",
+      "name": "촬영감독",
+      "emoji": "📷",
+      "color": "#2E7D6B",
+      "room": "stage",
+      "model": "sonnet"
+    },
+    {
+      "id": "keyframe",
+      "name": "키프레임 작가",
+      "emoji": "🖼",
+      "color": "#C2185B",
+      "room": "stage",
+      "model": "sonnet"
+    },
+    {
+      "id": "animator",
+      "name": "영상 생성 담당",
+      "emoji": "🎞",
+      "color": "#6A4FB3",
+      "room": "stage",
+      "model": "haiku"
+    },
+    {
+      "id": "blender",
+      "name": "3D 아티스트",
+      "emoji": "🧊",
+      "color": "#E07B00",
+      "room": "stage",
+      "model": "sonnet"
+    },
+    {
+      "id": "sound",
+      "name": "사운드 디자이너",
+      "emoji": "🎧",
+      "color": "#00838F",
+      "room": "sound",
+      "model": "sonnet"
+    },
+    {
+      "id": "editor",
+      "name": "편집기사",
+      "emoji": "✂️",
+      "color": "#5D6D7E",
+      "room": "edit",
+      "model": "sonnet"
+    },
+    {
+      "id": "colorist",
+      "name": "컬러리스트",
+      "emoji": "🎨",
+      "color": "#B8860B",
+      "room": "edit",
+      "model": "haiku"
+    },
+    {
+      "id": "critic",
+      "name": "QA 크리틱",
+      "emoji": "🧐",
+      "color": "#7B1F1F",
+      "room": "screen",
+      "model": "opus"
+    },
+    {
+      "id": "packager",
+      "name": "패키징 매니저",
+      "emoji": "📦",
+      "color": "#3C8D2F",
+      "room": "release",
+      "model": "sonnet"
+    },
+    {
+      "id": "publisher",
+      "name": "퍼블리셔",
+      "emoji": "🚀",
+      "color": "#1565C0",
+      "room": "release",
+      "model": "haiku"
+    },
+    {
+      "id": "analyst",
+      "name": "데이터 분석가",
+      "emoji": "📊",
+      "color": "#455A64",
+      "room": "release",
+      "model": "sonnet"
+    }
   ],
   "stages": [
-    { "id": "research",  "agent": "scout",     "room": "writers" },
-    { "id": "script",    "agent": "writer",    "room": "writers" },
-    { "id": "check",     "agent": "checker",   "room": "writers" },
-    { "id": "shotlist",  "agent": "director",  "room": "writers" },
-    { "id": "prompts",   "agent": "dop",       "room": "stage" },
-    { "id": "gate1",     "agent": "boss",      "room": "boss",    "gate": true, "label": "기획 승인" },
-    { "id": "keyframes", "agent": "keyframe",  "room": "stage" },
-    { "id": "clips",     "agent": "animator",  "room": "stage" },
-    { "id": "objects",   "agent": "blender",   "room": "stage",   "optional": true },
-    { "id": "audio",     "agent": "sound",     "room": "sound" },
-    { "id": "edit",      "agent": "editor",    "room": "edit" },
-    { "id": "color",     "agent": "colorist",  "room": "edit" },
-    { "id": "qa",        "agent": "critic",    "room": "screen" },
-    { "id": "gate2",     "agent": "boss",      "room": "boss",    "gate": true, "label": "최종본 승인" },
-    { "id": "package",   "agent": "packager",  "room": "release" },
-    { "id": "publish",   "agent": "publisher", "room": "release" },
-    { "id": "done",      "agent": null,        "room": "release" }
+    {
+      "id": "research",
+      "label": "리서치",
+      "agent": "scout",
+      "room": "writers"
+    },
+    {
+      "id": "script",
+      "label": "시나리오",
+      "agent": "writer",
+      "room": "writers"
+    },
+    {
+      "id": "check",
+      "label": "검수",
+      "agent": "checker",
+      "room": "writers"
+    },
+    {
+      "id": "shotlist",
+      "label": "샷 리스트",
+      "agent": "director",
+      "room": "writers"
+    },
+    {
+      "id": "prompts",
+      "label": "프롬프트",
+      "agent": "dop",
+      "room": "stage"
+    },
+    {
+      "id": "gate1",
+      "label": "기획 승인",
+      "agent": "boss",
+      "room": "boss",
+      "gate": true
+    },
+    {
+      "id": "keyframes",
+      "label": "키프레임",
+      "agent": "keyframe",
+      "room": "stage"
+    },
+    {
+      "id": "clips",
+      "label": "클립 생성",
+      "agent": "animator",
+      "room": "stage"
+    },
+    {
+      "id": "objects",
+      "label": "3D 렌더",
+      "agent": "blender",
+      "room": "stage",
+      "optional": true
+    },
+    {
+      "id": "audio",
+      "label": "사운드",
+      "agent": "sound",
+      "room": "sound"
+    },
+    {
+      "id": "edit",
+      "label": "편집",
+      "agent": "editor",
+      "room": "edit"
+    },
+    {
+      "id": "color",
+      "label": "컬러",
+      "agent": "colorist",
+      "room": "edit"
+    },
+    {
+      "id": "qa",
+      "label": "QA",
+      "agent": "critic",
+      "room": "screen"
+    },
+    {
+      "id": "gate2",
+      "label": "최종본 승인",
+      "agent": "boss",
+      "room": "boss",
+      "gate": true
+    },
+    {
+      "id": "package",
+      "label": "패키징",
+      "agent": "packager",
+      "room": "release"
+    },
+    {
+      "id": "publish",
+      "label": "업로드",
+      "agent": "publisher",
+      "room": "release"
+    },
+    {
+      "id": "done",
+      "label": "공개 완료",
+      "agent": null,
+      "room": "release"
+    }
   ]
 }

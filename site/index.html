@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiet Frames Studio</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #14121a; --panel: #1d1a26; --line: #2f2a3d; --text: #ece8f4; --muted: #9c95ad;
+    --accent: #f2c14e; --ok: #4ade80; --warn: #fb923c; --bad: #f87171;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f4f1ea; --panel: #fffdf8; --line: #e2dccf; --text: #241f2e; --muted: #6d6680;
+      --accent: #b7791f; --ok: #15803d; --warn: #c2410c; --bad: #b91c1c;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f1ea; --panel: #fffdf8; --line: #e2dccf; --text: #241f2e; --muted: #6d6680;
+    --accent: #b7791f; --ok: #15803d; --warn: #c2410c; --bad: #b91c1c;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 14px/1.5 -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
+  header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 16px 16px 8px; max-width: 1240px; margin: 0 auto; }
+  header h1 { margin: 0; font-size: 18px; letter-spacing: .12em; }
+  header .sub { color: var(--muted); font-size: 13px; }
+  header .spacer { flex: 1; }
+  button { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+  button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; padding: 8px 16px 32px; max-width: 1240px; margin: 0 auto; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  .stage-wrap { background: #0c0b10; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; position: relative; }
+  canvas { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+  #banner { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); padding: 6px 14px; border-radius: 999px;
+            font-size: 13px; font-weight: 600; display: none; white-space: nowrap; max-width: calc(100% - 20px); overflow: hidden; text-overflow: ellipsis; }
+  #banner.gate { display: block; background: var(--accent); color: #1a1408; animation: pulse 1.4s infinite; }
+  #banner.demo { display: block; background: #3b3450; color: #e9e3ff; }
+  @keyframes pulse { 50% { opacity: .65; } }
+  aside { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+  .card h2 { margin: 0 0 10px; font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: .04em; }
+  .ep { padding: 8px 0; border-top: 1px solid var(--line); }
+  .ep:first-of-type { border-top: 0; padding-top: 0; }
+  .ep .row { display: flex; justify-content: space-between; gap: 8px; }
+  .ep .t { font-weight: 600; }
+  .ep .s { color: var(--muted); font-size: 12px; }
+  .bar { height: 6px; background: var(--line); border-radius: 3px; margin-top: 6px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+  .log { list-style: none; margin: 0; padding: 0; font-size: 12.5px; }
+  .log li { padding: 5px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 44px 1fr; gap: 8px; }
+  .log li:first-child { border-top: 0; }
+  .log li.empty { display: block; }
+  .log .when { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .crew { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; font-size: 12.5px; }
+  .crew div { display: flex; align-items: center; gap: 6px; min-width: 0; }
+  .crew span.n { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--muted); }
+  .dot.working { background: var(--ok); } .dot.done { background: var(--accent); } .dot.retry { background: var(--bad); }
+  .empty { color: var(--muted); font-size: 13px; }
+  footer { max-width: 1240px; margin: 0 auto; padding: 0 16px 24px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">QUIET FRAMES STUDIO</h1>
+  <span class="sub" id="sub">불러오는 중…</span>
+  <span class="spacer"></span>
+  <button id="demoBtn" aria-pressed="false" title="실제 기록 대신 한 편이 끝까지 만들어지는 과정을 재생합니다">데모 재생</button>
+</header>
+<main>
+  <div class="stage-wrap">
+    <canvas id="studio" aria-label="에이전트들이 일하는 픽셀 스튜디오"></canvas>
+    <div id="banner"></div>
+  </div>
+  <aside>
+    <section class="card"><h2>제작 중인 에피소드</h2><div id="eps"></div></section>
+    <section class="card"><h2>크루</h2><div class="crew" id="crew"></div></section>
+    <section class="card"><h2>최근 기록</h2><ul class="log" id="log"></ul></section>
+  </aside>
+</main>
+<footer>화면의 움직임은 <code>episodes/*/meta.json</code> 기록만 따릅니다. 데모 모드일 때만 예외이며, 상단에 표시됩니다.</footer>
+<script src="studio.js"></script>
+</body>
+</html>

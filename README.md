@@ -20,8 +20,8 @@
 
 ## 단계별 구축
 - [x] 1단계 — 에이전트·바이블·제작 스킬 (반자동: 생성은 힉스필드 웹에서)
-- [ ] 2단계 — 픽셀 스튜디오 오피스 화면
-- [ ] 3단계 — ffmpeg 마감 파이프라인 + 첫 편 테스트
+- [x] 2단계 — 픽셀 스튜디오 오피스 화면 (`site/`, 로컬: `cd site && python3 -m http.server`)
+- [~] 3단계 — ffmpeg 마감 파이프라인(`pipeline/finish.sh` 완료) + 첫 편 테스트
 - [ ] 4단계 — 생성 API · Blender MCP · ElevenLabs · 업로드 API 자동화
 
 ## 사용
