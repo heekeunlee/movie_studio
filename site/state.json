@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T13:54:37.236Z",
+  "generatedAt": "2026-10-27T14:09:28.177Z",
   "studioTitle": "QUIET FRAMES STUDIO",
   "rooms": [
     {
@@ -391,9 +391,9 @@
       "color": "#8A5A2B",
       "room": "writers",
       "model": "sonnet",
-      "status": "done",
-      "ep": "ep01",
-      "note": "FIX 반영 완료 — R1·R2 수정, PASS 처리"
+      "status": "idle",
+      "ep": null,
+      "note": ""
     },
     {
       "id": "director",
@@ -402,9 +402,9 @@
       "color": "#1F1F1F",
       "room": "writers",
       "model": "opus",
-      "status": "done",
-      "ep": "ep01",
-      "note": "9컷(영상 8+문구 카드) · 49.5초 · ai 6/library 3(C4·C8·END)/blender 0 · 이미지 13·영상 9 생성"
+      "status": "idle",
+      "ep": null,
+      "note": ""
     },
     {
       "id": "dop",
@@ -413,9 +413,9 @@
       "color": "#2E7D6B",
       "room": "stage",
       "model": "sonnet",
-      "status": "done",
-      "ep": "ep01",
-      "note": "이미지 16개(기준 2·신규 10·편집 4) · 영상 9개 프롬프트"
+      "status": "idle",
+      "ep": null,
+      "note": ""
     },
     {
       "id": "keyframe",
@@ -530,17 +530,30 @@
   ],
   "episodes": [
     {
+      "id": "ep02",
+      "title": "1%.",
+      "stage": "research",
+      "status": "waiting",
+      "agent": "scout",
+      "note": "대기",
+      "updatedAt": "2026-10-27T14:09:28.120Z",
+      "retries": {},
+      "progress": 0.03125,
+      "links": {},
+      "stageLog": {}
+    },
+    {
       "id": "ep01",
       "title": "call mom.",
-      "stage": "gate1",
-      "status": "done",
-      "agent": "boss",
-      "note": "승인 — 권장안(렌즈 표기 유지·K01d 유지·카메라 브랜드 표기 제거)",
-      "updatedAt": "2026-10-27T13:52:05.746Z",
+      "stage": "keyframes",
+      "status": "waiting",
+      "agent": "keyframe",
+      "note": "보류 — 전제가 같은 기존 광고(Siyaram's) 있어 생성 전 중단",
+      "updatedAt": "2026-10-27T14:09:10.618Z",
       "retries": {
         "script": 1
       },
-      "progress": 0.375,
+      "progress": 0.40625,
       "links": {},
       "stageLog": {
         "research": {
@@ -572,11 +585,26 @@
           "status": "done",
           "note": "승인 — 권장안(렌즈 표기 유지·K01d 유지·카메라 브랜드 표기 제거)",
           "at": "2026-10-27T13:52:05.746Z"
+        },
+        "keyframes": {
+          "status": "waiting",
+          "note": "보류 — 전제가 같은 기존 광고(Siyaram's) 있어 생성 전 중단",
+          "at": "2026-10-27T14:09:10.618Z"
         }
       }
     }
   ],
   "log": [
+    {
+      "stage": "keyframes",
+      "status": "waiting",
+      "agent": "keyframe",
+      "note": "보류 — 전제가 같은 기존 광고(Siyaram's) 있어 생성 전 중단",
+      "at": "2026-10-27T14:09:10.618Z",
+      "ep": "ep01",
+      "title": "call mom.",
+      "who": "키프레임 작가"
+    },
     {
       "stage": "gate1",
       "status": "done",
@@ -711,6 +739,6 @@
   "gate": null,
   "totals": {
     "published": 0,
-    "inProgress": 1
+    "inProgress": 2
   }
 }
