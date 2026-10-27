@@ -28,6 +28,9 @@
   header .sub { color: var(--muted); font-size: 13px; }
   header .spacer { flex: 1; }
   button { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+  .btnlink { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font-size: 13px; text-decoration: none; }
+  .btnlink:hover, .replink:hover { border-color: var(--accent); }
+  .replink { color: var(--accent); font-size: 12.5px; text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; }
   button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
   main { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; padding: 8px 16px 32px; max-width: 1240px; margin: 0 auto; }
   @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
@@ -149,6 +152,7 @@
   <h1 id="title">QUIET FRAMES STUDIO</h1>
   <span class="sub" id="sub">불러오는 중…</span>
   <span class="spacer"></span>
+  <a class="btnlink" href="report.html">📄 제작 보고서</a>
   <button id="demoBtn" aria-pressed="false" title="실제 기록 대신 한 편이 끝까지 만들어지는 과정을 재생합니다">데모 재생</button>
 </header>
 <main>

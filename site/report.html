@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>제작 보고서 · Quiet Frames</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #14121a; --panel: #1d1a26; --line: #2f2a3d; --text: #ece8f4; --muted: #9c95ad;
+    --accent: #f2c14e; --ok: #4ade80; --warn: #fb923c; --bad: #f87171;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f4f1ea; --panel: #fffdf8; --line: #e2dccf; --text: #241f2e; --muted: #6d6680;
+      --accent: #b7791f; --ok: #15803d; --warn: #c2410c; --bad: #b91c1c;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f1ea; --panel: #fffdf8; --line: #e2dccf; --text: #241f2e; --muted: #6d6680;
+    --accent: #b7791f; --ok: #15803d; --warn: #c2410c; --bad: #b91c1c;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 15px/1.65 -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 16px 16px 48px; }
+  nav.top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; font-size: 13px; }
+  nav.top a.back { text-decoration: none; color: var(--muted); }
+  #tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+  #tabs a { text-decoration: none; color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; background: var(--panel); }
+  #tabs a.on { border-color: var(--accent); color: var(--accent); }
+  #tabs span.off { color: var(--muted); border: 1px dashed var(--line); border-radius: 999px; padding: 3px 11px; }
+  header.hero { padding: 22px 0 8px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+  .eno { color: var(--muted); letter-spacing: .12em; font-size: 12px; }
+  h1 { margin: 2px 0 6px; font-size: 34px; letter-spacing: .01em; }
+  .logline { font-size: 17px; margin: 6px 0 12px; max-width: 760px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12.5px; border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; color: var(--muted); background: var(--panel); }
+  .chip.phase { color: var(--accent); border-color: var(--accent); }
+  section { padding: 22px 0 6px; }
+  h2 { font-size: 13px; letter-spacing: .08em; color: var(--muted); margin: 0 0 12px; font-weight: 700; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .synopsis p { margin: 0 0 8px; }
+  .lastline { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 12px; }
+  @media (max-width: 720px) { .lastline { grid-template-columns: 1fr; } }
+  .endcard { background: #000; color: #f4f1ea; border-radius: 12px; display: grid; place-items: center; text-align: center; padding: 34px 18px;
+             font: italic 22px/1.4 Georgia, "Times New Roman", serif; }
+  .muted { color: var(--muted); font-size: 13px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+  .grid .card b { display: block; margin-bottom: 4px; }
+  .grid .card p { margin: 0; font-size: 14px; color: var(--muted); }
+  /* 콘티 */
+  .timebar { display: flex; height: 34px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); margin-bottom: 12px; }
+  .timebar div { display: grid; place-items: center; font-size: 11.5px; font-weight: 700; border-right: 1px solid var(--bg); min-width: 0; overflow: hidden; white-space: nowrap; }
+  .b-hook { background: color-mix(in srgb, var(--bad) 35%, var(--panel)); }
+  .b-mid { background: color-mix(in srgb, #a78bfa 30%, var(--panel)); }
+  .b-time { background: color-mix(in srgb, #94a3b8 30%, var(--panel)); }
+  .b-turn { background: color-mix(in srgb, var(--accent) 35%, var(--panel)); }
+  .b-end { background: color-mix(in srgb, var(--ok) 30%, var(--panel)); }
+  .conti { display: grid; gap: 8px; }
+  .shot { display: grid; grid-template-columns: 64px minmax(0, 1fr) 210px; gap: 12px; align-items: start; }
+  .shot .id { font-weight: 800; font-size: 18px; }
+  .shot .id small { display: block; font-size: 12px; font-weight: 500; color: var(--muted); }
+  .shot .desc { font-size: 14.5px; }
+  .shot .ov { margin-top: 4px; font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--accent); }
+  .shot .meta { font-size: 12.5px; color: var(--muted); }
+  @media (max-width: 720px) { .shot { grid-template-columns: 52px minmax(0, 1fr); } .shot .meta { grid-column: 2; } }
+  ul.clean { margin: 0; padding-left: 18px; } ul.clean li { margin: 3px 0; }
+  .keep { display: flex; flex-wrap: wrap; gap: 6px; }
+  .keep span { border: 1px solid var(--ok); color: var(--ok); border-radius: 999px; padding: 2px 10px; font-size: 13px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 6px; border-top: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12.5px; border-top: 0; }
+  .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+  @media (max-width: 720px) { .two { grid-template-columns: 1fr; } }
+  .tl { list-style: none; margin: 0; padding: 0; }
+  .tl li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 10px; padding: 6px 0; border-top: 1px solid var(--line); font-size: 14px; }
+  .tl li:first-child { border-top: 0; }
+  .tl .when { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 13px; }
+  .s-done { color: var(--ok); } .s-working { color: var(--accent); } .s-waiting { color: var(--warn); } .s-retry, .s-failed { color: var(--bad); }
+  .empty { color: var(--muted); padding: 40px 0; text-align: center; }
+  .table-scroll { overflow-x: auto; }
+  @media print { nav.top { display: none; } body { background: #fff; color: #000; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top"><a class="back" href="./">← 스튜디오</a><span class="muted">제작 보고서</span><div id="tabs"></div></nav>
+  <main id="doc"><p class="empty">불러오는 중…</p></main>
+</div>
+<script>
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const kst = (iso) => { const d = new Date(Date.parse(iso) + 9 * 3600e3); return `${d.getUTCMonth() + 1}/${d.getUTCDate()} ${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`; };
+const ST = { done: "완료", working: "시작", waiting: "대기", retry: "재작업", failed: "실패" };
+const beatClass = (b) => /훅/.test(b) ? "b-hook" : /갈등/.test(b) ? "b-mid" : /시간/.test(b) ? "b-time" : /전환|절정/.test(b) ? "b-turn" : "b-end";
+const safeUrl = (u) => /^https?:\/\//.test(u ?? "") ? u : "";
+
+async function main() {
+  const doc = document.getElementById("doc");
+  let index = [];
+  try { index = await (await fetch(`reports/index.json?ts=${Date.now()}`, { cache: "no-store" })).json(); } catch {}
+  let plan = [];
+  try { plan = (await (await fetch(`state.json?ts=${Date.now()}`, { cache: "no-store" })).json()).plan ?? []; } catch {}
+  const want = new URLSearchParams(location.search).get("ep") || index[index.length - 1]?.id;
+  const have = new Set(index.map((r) => r.id));
+  const ids = [...new Set([...plan.map((p) => p.id), ...index.map((r) => r.id)])];
+  document.getElementById("tabs").innerHTML = ids.map((id) => have.has(id)
+    ? `<a href="?ep=${esc(id)}" class="${id === want ? "on" : ""}">${esc(id.toUpperCase())}</a>`
+    : `<span class="off" title="아직 보고서 없음">${esc(id.toUpperCase())}</span>`).join("");
+  if (!want || !have.has(want)) { doc.innerHTML = `<p class="empty">아직 보고서가 없습니다.</p>`; return; }
+
+  const r = await (await fetch(`reports/${encodeURIComponent(want)}.json?ts=${Date.now()}`, { cache: "no-store" })).json();
+  document.title = `${r.id.toUpperCase()} ${r.title} · 제작 보고서`;
+  const total = r.conti.reduce((n, c) => n + c.sec, 0);
+  let t = 0;
+  const shots = r.conti.map((c) => { const from = t; t += c.sec; return { ...c, from, to: t }; });
+
+  doc.innerHTML = `
+  <header class="hero">
+    <div class="eno">${esc(r.id.toUpperCase())} · 제작 보고서 · 갱신 ${esc(r.updatedAt)}</div>
+    <h1>${esc(r.title)}</h1>
+    <p class="logline">${esc(r.logline)}</p>
+    <div class="chips">
+      <span class="chip phase">${esc(r.phase)}</span>
+      <span class="chip">${esc(r.spec.seconds)}초 · ${esc(r.spec.cuts)}컷</span>
+      <span class="chip">${esc(r.spec.format)}</span>
+      <span class="chip">대사 ${esc(r.spec.dialogue)}</span>
+      <span class="chip">${esc(r.spec.light)}</span>
+    </div>
+  </header>
+
+  <section><h2>시놉시스</h2><div class="card synopsis">${r.synopsis.map((p) => `<p>${esc(p)}</p>`).join("")}</div></section>
+
+  <section><h2>마지막 한 줄 · 고정 댓글</h2>
+    <div class="lastline">
+      <div class="endcard">${esc(r.lastLine)}</div>
+      <div class="card"><b>고정 댓글 질문</b><p>${esc(r.pinnedComment)}</p>
+        <b>대안 문구</b><ul class="clean">${(r.lastLineAlternatives ?? []).map((a) => `<li>${esc(a)}</li>`).join("")}</ul></div>
+    </div></section>
+
+  <section><h2>흥미 요소 — 왜 끝까지 보고, 다시 보고, 댓글을 다는가</h2>
+    <div class="grid">${r.hooks.map((h) => `<div class="card"><b>${esc(h.title)}</b><p>${esc(h.body)}</p></div>`).join("")}</div></section>
+
+  <section><h2>콘티 — ${esc(total)}초 · ${shots.length}컷</h2>
+    <div class="timebar" aria-label="컷 길이 비율">${shots.map((c) => `<div class="${beatClass(c.beat)}" style="flex:${c.sec}" title="${esc(c.id)} ${esc(c.beat)} ${c.sec}s">${esc(c.id)}</div>`).join("")}</div>
+    <div class="conti">${shots.map((c) => `
+      <div class="card shot">
+        <div class="id">${esc(c.id)}<small>${c.from.toFixed(1)}–${c.to.toFixed(1)}s</small><small>${esc(c.beat)}</small></div>
+        <div><div class="desc">${esc(c.desc)}</div>${c.overlay ? `<div class="ov">“${esc(c.overlay)}”</div>` : ""}</div>
+        <div class="meta">${esc(c.frame)}<br>${esc(c.method)}</div>
+      </div>`).join("")}</div></section>
+
+  <section><h2>시그니처 — 화분의 변화</h2><div class="card"><ul class="clean">${r.plantArc.map((p) => `<li>${esc(p)}</li>`).join("")}</ul></div></section>
+
+  <section><h2>신경 쓴 포인트</h2>
+    <div class="grid">${r.carePoints.map((h) => `<div class="card"><b>${esc(h.title)}</b><p>${esc(h.body)}</p></div>`).join("")}</div></section>
+
+  <section><h2>바꾸면 안 되는 차별점</h2><div class="keep">${r.keep.map((k) => `<span>${esc(k)}</span>`).join("")}</div></section>
+
+  <section><h2>유사 작품 대조 (표절 검수)</h2>
+    <div class="card table-scroll"><table><tr><th>작품</th><th>연도</th><th>판단</th></tr>
+    ${r.similarWorks.map((w) => `<tr><td>${safeUrl(w.url) ? `<a href="${esc(safeUrl(w.url))}" target="_blank" rel="noopener">${esc(w.name)}</a>` : esc(w.name)}</td><td>${esc(w.year)}</td><td>${esc(w.note)}</td></tr>`).join("")}
+    </table></div></section>
+
+  <section class="two">
+    <div><h2>제작 규모</h2><div class="card"><table>
+      <tr><th>이미지</th><td>${esc(r.production.images)}</td></tr>
+      <tr><th>영상</th><td>${esc(r.production.videos)}</td></tr>
+      <tr><th>생성 없음</th><td>${esc(r.production.noVideo)}</td></tr>
+      <tr><th>시도 예상</th><td>${esc(r.production.attempts)}</td></tr>
+      <tr><th>도구</th><td>${esc(r.production.tools)}</td></tr></table></div></div>
+    <div><h2>위험 컷과 대응</h2><div class="card"><ul class="clean">${r.risks.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div></div>
+  </section>
+
+  <section><h2>결정 기록</h2><div class="card table-scroll"><table><tr><th>질문</th><th>결정</th></tr>
+    ${r.decisions.map((d) => `<tr><td>${esc(d.q)}</td><td>${esc(d.a)}</td></tr>`).join("")}</table></div></section>
+
+  <section class="two">
+    <div><h2>진행 기록 (meta.json)</h2><div class="card"><ul class="tl">${(r.timeline ?? []).map((h) => `
+      <li><span class="when">${kst(h.at)}</span><span><b>${esc(h.label)}</b> <span class="s-${esc(h.status)}">${esc(ST[h.status] ?? h.status)}</span> · ${esc(h.who)}<br><span class="muted">${esc(h.note)}</span></span></li>`).join("")}</ul></div></div>
+    <div><h2>다음 할 일</h2><div class="card"><ul class="clean">${r.next.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div></div>
+  </section>`;
+}
+main().catch(() => { document.getElementById("doc").innerHTML = `<p class="empty">보고서를 불러오지 못했습니다.</p>`; });
+</script>
+</body>
+</html>

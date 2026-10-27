@@ -42,6 +42,12 @@ description: 에피소드 하나를 기획부터 업로드 직전까지 스튜�
 1. packager → `package.json`, `subs/`
 2. publisher → 1단계에서는 `upload-checklist.md` 까지. 업로드는 대표가 한다
 
+## 📄 제작 보고서 (배포 사이트에 쌓인다)
+- 게이트 1 승인 직후, 게이트 2 승인 직후, 공개 완료 후에 `episodes/<ep>/report.json` 을 만들거나 갱신한다 (형식은 `episodes/ep01/report.json` 을 따른다)
+- 내용은 script.md · check.md · shotlist.json · prompts.md · qa-report.md · package.json 에서만 옮긴다. 없는 수치·출처를 지어내지 않는다
+- 항목: 로그라인, 시놉시스, 마지막 한 줄·고정 댓글, 흥미 요소, 콘티, 화분 변화, 신경 쓴 포인트, 차별점, 유사 작품, 제작 규모, 위험, 결정 기록, 다음 할 일
+- 진행 기록(타임라인)은 meta.json 에서 자동으로 붙는다. `node pipeline/build-state.mjs` → `site/reports/` → push 하면 `report.html?ep=<ep>` 에 반영
+
 ## 규칙
 - 모든 에이전트 호출 프롬프트에 에피소드 id 와 "상태 보고 명령을 반드시 실행하라"를 포함한다
 - 각 단계가 끝날 때마다 대표에게 한 줄로 진행 상황을 알린다 (예: "✍️ 작가 완료 → 🔍 검수 중")

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T13:35:30.495Z",
+  "generatedAt": "2026-10-27T13:54:37.236Z",
   "studioTitle": "QUIET FRAMES STUDIO",
   "rooms": [
     {
@@ -358,6 +358,9 @@
       "lastLine": "Day one."
     }
   ],
+  "reports": [
+    "ep01"
+  ],
   "agents": [
     {
       "id": "scout",
@@ -530,14 +533,14 @@
       "id": "ep01",
       "title": "call mom.",
       "stage": "gate1",
-      "status": "waiting",
+      "status": "done",
       "agent": "boss",
-      "note": "기획 승인 대기 — 대표 확인 필요",
-      "updatedAt": "2026-10-27T13:35:30.447Z",
+      "note": "승인 — 권장안(렌즈 표기 유지·K01d 유지·카메라 브랜드 표기 제거)",
+      "updatedAt": "2026-10-27T13:52:05.746Z",
       "retries": {
         "script": 1
       },
-      "progress": 0.34375,
+      "progress": 0.375,
       "links": {},
       "stageLog": {
         "research": {
@@ -566,14 +569,24 @@
           "at": "2026-10-27T13:35:30.351Z"
         },
         "gate1": {
-          "status": "waiting",
-          "note": "기획 승인 대기 — 대표 확인 필요",
-          "at": "2026-10-27T13:35:30.447Z"
+          "status": "done",
+          "note": "승인 — 권장안(렌즈 표기 유지·K01d 유지·카메라 브랜드 표기 제거)",
+          "at": "2026-10-27T13:52:05.746Z"
         }
       }
     }
   ],
   "log": [
+    {
+      "stage": "gate1",
+      "status": "done",
+      "agent": "boss",
+      "note": "승인 — 권장안(렌즈 표기 유지·K01d 유지·카메라 브랜드 표기 제거)",
+      "at": "2026-10-27T13:52:05.746Z",
+      "ep": "ep01",
+      "title": "call mom.",
+      "who": "대표"
+    },
     {
       "stage": "gate1",
       "status": "waiting",
@@ -695,11 +708,7 @@
       "who": "트렌드 리서처"
     }
   ],
-  "gate": {
-    "ep": "ep01",
-    "title": "call mom.",
-    "label": "기획 승인"
-  },
+  "gate": null,
   "totals": {
     "published": 0,
     "inProgress": 1

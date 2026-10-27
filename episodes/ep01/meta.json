@@ -2,11 +2,11 @@
   "id": "ep01",
   "title": "call mom.",
   "createdAt": "2026-10-27T11:49:38.295Z",
-  "updatedAt": "2026-10-27T13:35:30.447Z",
+  "updatedAt": "2026-10-27T13:52:05.746Z",
   "stage": "gate1",
-  "status": "waiting",
+  "status": "done",
   "agent": "boss",
-  "note": "기획 승인 대기 — 대표 확인 필요",
+  "note": "승인 — 권장안(렌즈 표기 유지·K01d 유지·카메라 브랜드 표기 제거)",
   "retries": {
     "script": 1
   },
@@ -95,6 +95,13 @@
       "agent": "boss",
       "note": "기획 승인 대기 — 대표 확인 필요",
       "at": "2026-10-27T13:35:30.447Z"
+    },
+    {
+      "stage": "gate1",
+      "status": "done",
+      "agent": "boss",
+      "note": "승인 — 권장안(렌즈 표기 유지·K01d 유지·카메라 브랜드 표기 제거)",
+      "at": "2026-10-27T13:52:05.746Z"
     }
   ]
 }

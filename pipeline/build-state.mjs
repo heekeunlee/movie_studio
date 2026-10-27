@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // episodes/*/meta.json + crew.json → site/state.json
 // 오피스 화면은 이 파일만 읽는다. 여기서 만들어내는 값은 전부 실제 기록에서 나온다.
-import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -53,13 +53,29 @@ const log = episodes
 
 const gate = episodes.find((e) => crew.stages[stageIdx[e.stage]]?.gate && e.status === "waiting") ?? null;
 
+// 에피소드 보고서: episodes/<ep>/report.json + meta 기록(타임라인) → site/reports/<ep>.json, 목록은 index.json
+const repDir = join(ROOT, "site", "reports");
+mkdirSync(repDir, { recursive: true });
+const reports = episodes
+  .filter((e) => existsSync(join(epDir, e.id, "report.json")))
+  .map((e) => {
+    const r = JSON.parse(readFileSync(join(epDir, e.id, "report.json"), "utf8"));
+    delete r.$comment;
+    r.stage = e.stage; r.status = e.status;
+    r.timeline = e.history.map((h) => ({ ...h, label: crew.stages[stageIdx[h.stage]]?.label ?? h.stage, who: nameOf(h.agent) }));
+    writeFileSync(join(repDir, `${e.id}.json`), JSON.stringify(r, null, 2) + "\n");
+    return { id: e.id, title: r.title, phase: r.phase, updatedAt: r.updatedAt, logline: r.logline };
+  })
+  .sort((a, b) => a.id.localeCompare(b.id));
+writeFileSync(join(repDir, "index.json"), JSON.stringify(reports, null, 2) + "\n");
+
 const state = {
   generatedAt: new Date().toISOString(),
   studioTitle: crew.studioTitle,
   rooms: crew.rooms,
   stages: crew.stages.map(({ id, label, room, gate, agent, optional, out, tools }) =>
     ({ id, label, room, gate: !!gate, agent, optional: !!optional, out: out ?? "", tools: tools ?? [] })),
-  steps: crew.steps ?? [], loops: crew.loops ?? [], plan,
+  steps: crew.steps ?? [], loops: crew.loops ?? [], plan, reports: reports.map((r) => r.id),
   agents, episodes: eps, log,
   gate: gate && { ep: gate.id, title: gate.title, label: crew.stages[stageIdx[gate.stage]].label },
   totals: { published: episodes.filter((e) => e.stage === "done").length, inProgress: episodes.filter((e) => e.stage !== "done").length },

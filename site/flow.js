@@ -216,7 +216,8 @@ function renderSummary(ep, stById) {
   el.innerHTML = `<b>${esc(ep.id)} · ${esc(ep.title)}</b>
     <span class="pill st-${esc(ep.stage === "done" ? "done" : ep.status)}">${esc(cur?.label)} ${esc(ST_LABEL[ep.status] ?? ep.status)}</span>
     ${nextStage ? `<span class="muted">다음 → ${esc(nextStage.label)} (${esc(who(nextStage))})</span>` : ep.stage !== "done" ? `<span class="muted">담당 ${esc(who(cur))}</span>` : ""}
-    <span class="muted">· ${doneN}/${S.stages.length} 단계 · ${esc(ep.note)}</span>`;
+    <span class="muted">· ${doneN}/${S.stages.length} 단계 · ${esc(ep.note)}</span>
+    ${(S.reports ?? []).includes(ep.id) ? `<a class="replink" href="report.html?ep=${encodeURIComponent(ep.id)}">📄 보고서</a>` : ""}`;
 }
 
 function renderBoard() {
@@ -237,7 +238,7 @@ function renderBoard() {
       <span class="etitle">${esc(e?.title ?? p.title)}</span>
       <span class="eline">${esc(p.lastLine ?? "")}</span>
       <span class="estrip">${segs}</span>
-      <span class="est"><span class="dot2 st-${esc(st)}"></span>${esc(label)}${e ? ` ${esc(ST_LABEL[e.status] ?? "")}` : ""}</span></button>`;
+      <span class="est"><span class="dot2 st-${esc(st)}"></span>${esc(label)}${e ? ` ${esc(ST_LABEL[e.status] ?? "")}` : ""}${(S.reports ?? []).includes(id) ? " · 📄" : ""}</span></button>`;
   }).join("");
 }
 

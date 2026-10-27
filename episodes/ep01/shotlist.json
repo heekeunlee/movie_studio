@@ -3,7 +3,7 @@
   "title": "call mom.",
   "targetSeconds": 49.5,
   "format": "9:16 1080x1920 24fps",
-  "promptSuffix": "vertical 9:16, shot on Canon R50, 35mm lens, f/1.8, shallow depth of field, natural light, muted colors, subtle handheld movement, film grain, photorealistic, no text",
+  "promptSuffix": "vertical 9:16, shot on a mirrorless camera, 35mm lens, f/1.8, shallow depth of field, natural light, muted colors, subtle handheld movement, film grain, photorealistic, no text",
   "rules": [
     "모든 폰 화면은 '켜져 있지만 아무것도 없는 어두운 화면(blank dark screen, no text, no icons)'으로 생성하고, 글자는 편집에서 코너핀 합성한다. 제조사 UI 흉내 금지.",
     "탁상 시계 인서트는 이 편 전체에서 정확히 3회(2:14 PM / 6:40 PM / 11:52 PM). 초 단위 표시·째깍 SFX 없음. 같은 앵글 몽타주 반복 금지 — 각 인서트는 0.5~1초 단발.",

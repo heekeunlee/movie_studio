@@ -8,7 +8,7 @@
 
 ## 실사처럼 보이게
 - 모든 이미지·영상 프롬프트 끝에 붙이는 문구:
-  `vertical 9:16, shot on Canon R50, 35mm lens, f/1.8, shallow depth of field, natural light, muted colors, subtle handheld movement, film grain, photorealistic, no text`
+  `vertical 9:16, shot on a mirrorless camera, 35mm lens, f/1.8, shallow depth of field, natural light, muted colors, subtle handheld movement, film grain, photorealistic, no text`
 - 얼굴은 짧게(1~2초), 어둡게. 손·사물·빛 위주로 이야기한다
 - 움직임은 작게: 느린 푸시인, 초점 이동, 미세한 핸드헬드
 - 후반: 같은 그레인·LUT·비네팅을 모든 컷에 일괄 적용 (`pipeline/finish.sh`)

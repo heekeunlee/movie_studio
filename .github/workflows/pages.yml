@@ -9,6 +9,7 @@ on:
       - "episodes/*/meta.json"
       - "crew.json"
       - "bible/episodes-plan.md"
+      - "episodes/*/report.json"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
