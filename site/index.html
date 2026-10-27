@@ -60,6 +60,88 @@
   .dot.working { background: var(--ok); } .dot.done { background: var(--accent); } .dot.retry { background: var(--bad); }
   .empty { color: var(--muted); font-size: 13px; }
   footer { max-width: 1240px; margin: 0 auto; padding: 0 16px 24px; color: var(--muted); font-size: 12px; }
+
+  /* ---- 흐름도 ---- */
+  .wide { max-width: 1240px; margin: 0 auto; padding: 0 16px 24px; }
+  .wide > .card { padding: 16px; }
+  .flow-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 10px; }
+  .flow-head h2 { margin: 0; }
+  #flowSum { font-size: 13px; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+  #flowSum .muted, .hint { color: var(--muted); font-size: 12.5px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; color: var(--muted); margin-top: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .legend i { width: 14px; height: 10px; border-radius: 3px; border: 2px solid var(--line); display: inline-block; }
+  .legend i.st-done { border-color: var(--ok); } .legend i.st-working { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 25%, transparent); }
+  .legend i.st-waiting { border-color: var(--warn); } .legend i.st-retry { border-color: var(--bad); } .legend i.st-skipped { border-style: dashed; }
+  .legend i.lp { border: 0; border-top: 2px dashed var(--bad); border-radius: 0; height: 0; }
+  .flow-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; }
+  #flow { display: block; width: 100%; min-width: 980px; height: auto; font-family: inherit; }
+  #flow .frame rect { stroke-width: 1.5; }
+  .fr-plan rect { fill: color-mix(in srgb, #f2c14e 8%, transparent); stroke: color-mix(in srgb, #f2c14e 40%, transparent); }
+  .fr-make rect { fill: color-mix(in srgb, #a78bfa 9%, transparent); stroke: color-mix(in srgb, #a78bfa 40%, transparent); }
+  .fr-post rect { fill: color-mix(in srgb, #2dd4bf 8%, transparent); stroke: color-mix(in srgb, #2dd4bf 38%, transparent); }
+  .fr-release rect { fill: color-mix(in srgb, #4ade80 8%, transparent); stroke: color-mix(in srgb, #4ade80 38%, transparent); }
+  .fr-feedback rect { fill: color-mix(in srgb, #94a3b8 9%, transparent); stroke: color-mix(in srgb, #94a3b8 40%, transparent); stroke-dasharray: 6 5; }
+  #flow .ft { font-size: 15px; font-weight: 700; fill: var(--text); }
+  #flow .fs { font-size: 12px; fill: var(--muted); }
+  #flow .node .body { fill: var(--panel); stroke: var(--line); stroke-width: 2; }
+  #flow .node.optional .body { stroke-dasharray: 6 4; }
+  #flow .lbl { font-size: 14px; font-weight: 700; fill: var(--text); }
+  #flow .lbl .opt { font-size: 10.5px; font-weight: 500; fill: var(--muted); }
+  #flow .sub { font-size: 11.5px; fill: var(--muted); }
+  #flow .c { text-anchor: middle; }
+  #flow .out { font-size: 11px; fill: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  #flow .emo { font-size: 16px; text-anchor: middle; }
+  #flow .gi { font-size: 18px; text-anchor: middle; fill: var(--text); }
+  #flow .chip { fill: color-mix(in srgb, var(--muted) 16%, transparent); }
+  #flow .chip.model { fill: color-mix(in srgb, var(--accent) 22%, transparent); }
+  #flow .chipt { font-size: 9.5px; text-anchor: middle; fill: var(--text); }
+  #flow .st-done .body { stroke: var(--ok); }
+  #flow .st-working .body, #flow .st-waiting .body { stroke: var(--accent); fill: color-mix(in srgb, var(--accent) 12%, var(--panel)); }
+  #flow .st-waiting .body { stroke: var(--warn); fill: color-mix(in srgb, var(--warn) 14%, var(--panel)); }
+  #flow .st-retry .body, #flow .st-failed .body { stroke: var(--bad); fill: color-mix(in srgb, var(--bad) 12%, var(--panel)); }
+  #flow .st-skipped { opacity: .55; } #flow .st-skipped .body { stroke-dasharray: 5 4; }
+  #flow .current .body { stroke-width: 3; animation: glow 1.6s ease-in-out infinite; }
+  @keyframes glow { 50% { stroke-opacity: .35; } }
+  #flow .badge circle { stroke: var(--panel); stroke-width: 2; }
+  #flow .badge text { font-size: 11px; font-weight: 700; text-anchor: middle; fill: #fff; }
+  #flow .b-done circle { fill: var(--ok); } #flow .b-working circle { fill: var(--accent); } #flow .b-waiting circle { fill: var(--warn); }
+  #flow .b-retry circle, #flow .b-failed circle { fill: var(--bad); } #flow .b-skipped circle { fill: var(--muted); }
+  #flow .edge { fill: none; stroke: var(--line); stroke-width: 2.5; }
+  #flow .edge.on { stroke: var(--ok); stroke-opacity: .8; }
+  #flow .edge.flowing { stroke: var(--accent); stroke-opacity: 1; stroke-dasharray: 8 6; animation: flow 0.9s linear infinite; }
+  #flow .edge.opt { stroke-dasharray: 6 5; }
+  #flow .edge.data { stroke: var(--muted); stroke-dasharray: 2 5; stroke-linecap: round; }
+  #flow .edge.loop { stroke: var(--bad); stroke-opacity: .45; stroke-width: 2; stroke-dasharray: 7 5; }
+  #flow .edge.loop.used { stroke-opacity: 1; stroke-width: 2.5; }
+  @keyframes flow { to { stroke-dashoffset: -14; } }
+  #flow .ah { fill: var(--line); } #flow .ah-on { fill: var(--ok); } #flow .ah-loop { fill: var(--bad); }
+  #flow .elbl { font-size: 11px; fill: var(--muted); text-anchor: middle; }
+  #flow .lpill { fill: var(--panel); stroke: color-mix(in srgb, var(--bad) 50%, transparent); }
+  #flow .ltxt { font-size: 11px; fill: var(--bad); text-anchor: middle; }
+  @media (prefers-reduced-motion: reduce) { #flow .edge.flowing, #flow .current .body { animation: none; } }
+  .pill { font-size: 12px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); }
+  .pill.st-done { border-color: var(--ok); color: var(--ok); } .pill.st-working { border-color: var(--accent); color: var(--accent); }
+  .pill.st-waiting { border-color: var(--warn); color: var(--warn); } .pill.st-retry, .pill.st-failed { border-color: var(--bad); color: var(--bad); }
+
+  /* ---- 에피소드 보드 ---- */
+  #board { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 10px; }
+  @media (min-width: 1100px) { #board { grid-template-columns: repeat(10, minmax(0, 1fr)); } #board .ecard { aspect-ratio: 9 / 16; } #board .etitle { font-size: 15px; } }
+  @media (max-width: 600px) { #board .ecard { aspect-ratio: auto; min-height: 150px; } }
+  .ecard { display: flex; flex-direction: column; gap: 6px; text-align: left; aspect-ratio: 9 / 13; padding: 12px 11px; border-radius: 12px;
+           background: linear-gradient(180deg, color-mix(in srgb, var(--text) 4%, var(--panel)), var(--panel)); border: 1px solid var(--line); min-width: 0; }
+  .ecard:hover { border-color: var(--muted); }
+  .ecard.sel { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .eno { font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+  .etitle { font-size: 17px; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
+  .eline { font-size: 11.5px; color: var(--muted); font-style: italic; flex: 1; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
+  .estrip { display: grid; grid-template-columns: repeat(17, 1fr); gap: 2px; }
+  .estrip i { height: 6px; border-radius: 2px; background: var(--line); }
+  .estrip i.st-done { background: var(--ok); } .estrip i.st-working { background: var(--accent); } .estrip i.st-waiting { background: var(--warn); }
+  .estrip i.st-retry, .estrip i.st-failed { background: var(--bad); } .estrip i.st-skipped { background: color-mix(in srgb, var(--ok) 35%, transparent); }
+  .est { font-size: 12px; display: flex; align-items: center; gap: 6px; color: var(--muted); }
+  .dot2 { width: 8px; height: 8px; border-radius: 50%; background: var(--line); flex: none; }
+  .dot2.st-done { background: var(--ok); } .dot2.st-working { background: var(--accent); } .dot2.st-waiting { background: var(--warn); } .dot2.st-retry, .dot2.st-failed { background: var(--bad); }
 </style>
 </head>
 <body>
@@ -80,7 +162,25 @@
     <section class="card"><h2>최근 기록</h2><ul class="log" id="log"></ul></section>
   </aside>
 </main>
+<section class="wide">
+  <div class="card">
+    <div class="flow-head"><h2>제작 공정 흐름도</h2><span id="flowSum"></span></div>
+    <div class="flow-scroll"><svg id="flow" viewBox="0 0 1280 860" role="img" aria-label="기획부터 배포까지 단계와 담당 에이전트, 산출물, 되돌림 관계"></svg></div>
+    <div class="legend">
+      <span><i class="st-done"></i>완료</span><span><i class="st-working"></i>작업 중</span><span><i class="st-waiting"></i>대표 승인 대기</span>
+      <span><i class="st-retry"></i>재작업·실패</span><span><i class="st-skipped"></i>건너뜀·선택</span><span><i></i>대기</span>
+      <span><i class="lp"></i>되돌림 루프</span><span>노드 안: 📄 산출물 · <b>모델</b> · 도구</span>
+    </div>
+  </div>
+</section>
+<section class="wide">
+  <div class="card">
+    <div class="flow-head"><h2>에피소드 보드</h2><span class="hint">첫 10편 · 카드를 누르면 흐름도가 그 편으로 바뀝니다 · 막대 한 칸 = 한 단계</span></div>
+    <div id="board"></div>
+  </div>
+</section>
 <footer>화면의 움직임은 <code>episodes/*/meta.json</code> 기록만 따릅니다. 데모 모드일 때만 예외이며, 상단에 표시됩니다.</footer>
+<script src="flow.js"></script>
 <script src="studio.js"></script>
 </body>
 </html>

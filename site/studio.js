@@ -246,6 +246,7 @@ function applyState(s) {
   else if (ep && !REEL.holder) REEL.at = reelRestingSpot(ep);
   lastEp = ep && { id: ep.id, stage: ep.stage, agent: ep.agent };
   renderPanels();
+  window.dispatchEvent(new CustomEvent("studio:state", { detail: s })); // flow.js (흐름도·보드)
 }
 
 /* ---------------- 그리기: 방 ---------------- */
@@ -509,7 +510,8 @@ function demoState() {
   const notes = { script: "첫 3초 훅 다듬는 중", check: "유사 광고 대조 중", shotlist: "컷 8개 · 48초", prompts: "ai 컷 6개 프롬프트",
     keyframes: "s03 손가락 재검사", clips: "클립 5/6", audio: "룸톤 + 폰 진동", edit: "문구 합성 중", color: "그레인·LUT 적용", qa: "프레임 96장 검사" };
   const ep = { id: "demo", title: "call mom.", stage: cur.id, agent: curAgent, status: cur.gate ? "waiting" : cur.id === "done" ? "done" : "working",
-    note: cur.gate ? `${cur.label} 대기` : notes[cur.id] ?? cur.label, updatedAt: new Date().toISOString(), retries: {}, progress: DEMO.i / (stages.length - 1) };
+    note: cur.gate ? `${cur.label} 대기` : notes[cur.id] ?? cur.label, updatedAt: new Date().toISOString(), retries: {}, progress: DEMO.i / (stages.length - 1),
+    stageLog: Object.fromEntries(stages.slice(0, DEMO.i).map((x) => [x.id, { status: "done", note: "데모", at: new Date().toISOString() }])) };
   return {
     ...REAL,
     agents: REAL.agents.map((a) => ({ ...a,

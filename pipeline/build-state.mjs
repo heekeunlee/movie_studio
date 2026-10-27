@@ -36,7 +36,16 @@ const eps = episodes.map((e) => ({
   updatedAt: e.updatedAt, retries: e.retries,
   progress: e.stage === "done" ? 1 : (stageIdx[e.stage] + (e.status === "done" ? 1 : 0.5)) / lastIdx,
   links: e.links ?? {},
+  // 단계별 마지막 기록 — 흐름도가 노드 색을 정하는 근거
+  stageLog: Object.fromEntries(e.history.map((h) => [h.stage, { status: h.status, note: h.note, at: h.at }])),
 }));
+
+// bible/episodes-plan.md 표 → 에피소드 보드 (아직 시작 안 한 편도 보이게)
+const planPath = join(ROOT, "bible", "episodes-plan.md");
+const plan = (existsSync(planPath) ? readFileSync(planPath, "utf8") : "").split("\n")
+  .map((l) => l.match(/^\|\s*(\d+)\s*\|([^|]+)\|([^|]+)\|([^|]+)\|/))
+  .filter(Boolean)
+  .map(([, n, title, logline, lastLine]) => ({ id: `ep${n.padStart(2, "0")}`, title: title.trim(), logline: logline.trim(), lastLine: lastLine.trim() }));
 
 const log = episodes
   .flatMap((e) => e.history.map((h) => ({ ...h, ep: e.id, title: e.title, who: nameOf(h.agent) })))
@@ -48,7 +57,9 @@ const state = {
   generatedAt: new Date().toISOString(),
   studioTitle: crew.studioTitle,
   rooms: crew.rooms,
-  stages: crew.stages.map(({ id, label, room, gate }) => ({ id, label, room, gate: !!gate })),
+  stages: crew.stages.map(({ id, label, room, gate, agent, optional, out, tools }) =>
+    ({ id, label, room, gate: !!gate, agent, optional: !!optional, out: out ?? "", tools: tools ?? [] })),
+  steps: crew.steps ?? [], loops: crew.loops ?? [], plan,
   agents, episodes: eps, log,
   gate: gate && { ep: gate.id, title: gate.title, label: crew.stages[stageIdx[gate.stage]].label },
   totals: { published: episodes.filter((e) => e.stage === "done").length, inProgress: episodes.filter((e) => e.stage !== "done").length },

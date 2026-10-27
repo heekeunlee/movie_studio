@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T11:52:34.448Z",
+  "generatedAt": "2026-10-27T13:19:29.263Z",
   "studioTitle": "QUIET FRAMES STUDIO",
   "rooms": [
     {
@@ -38,103 +38,324 @@
       "id": "research",
       "label": "리서치",
       "room": "writers",
-      "gate": false
+      "gate": false,
+      "agent": "scout",
+      "optional": false,
+      "out": "research.md",
+      "tools": [
+        "WebSearch"
+      ]
     },
     {
       "id": "script",
       "label": "시나리오",
       "room": "writers",
-      "gate": false
+      "gate": false,
+      "agent": "writer",
+      "optional": false,
+      "out": "script.md",
+      "tools": []
     },
     {
       "id": "check",
       "label": "검수",
       "room": "writers",
-      "gate": false
+      "gate": false,
+      "agent": "checker",
+      "optional": false,
+      "out": "check.md",
+      "tools": [
+        "WebSearch"
+      ]
     },
     {
       "id": "shotlist",
       "label": "샷 리스트",
       "room": "writers",
-      "gate": false
+      "gate": false,
+      "agent": "director",
+      "optional": false,
+      "out": "shotlist.json",
+      "tools": []
     },
     {
       "id": "prompts",
       "label": "프롬프트",
       "room": "stage",
-      "gate": false
+      "gate": false,
+      "agent": "dop",
+      "optional": false,
+      "out": "prompts.md",
+      "tools": []
     },
     {
       "id": "gate1",
       "label": "기획 승인",
       "room": "boss",
-      "gate": true
+      "gate": true,
+      "agent": "boss",
+      "optional": false,
+      "out": "승인/보류",
+      "tools": [
+        "카카오톡 알림"
+      ]
     },
     {
       "id": "keyframes",
       "label": "키프레임",
       "room": "stage",
-      "gate": false
+      "gate": false,
+      "agent": "keyframe",
+      "optional": false,
+      "out": "keyframes/",
+      "tools": [
+        "힉스필드 웹"
+      ]
     },
     {
       "id": "clips",
       "label": "클립 생성",
       "room": "stage",
-      "gate": false
+      "gate": false,
+      "agent": "animator",
+      "optional": false,
+      "out": "clips/",
+      "tools": [
+        "Kling · 힉스필드"
+      ]
     },
     {
       "id": "objects",
       "label": "3D 렌더",
       "room": "stage",
-      "gate": false
+      "gate": false,
+      "agent": "blender",
+      "optional": true,
+      "out": "objects/",
+      "tools": [
+        "Blender MCP"
+      ]
     },
     {
       "id": "audio",
       "label": "사운드",
       "room": "sound",
-      "gate": false
+      "gate": false,
+      "agent": "sound",
+      "optional": false,
+      "out": "audio/cue.md",
+      "tools": [
+        "ElevenLabs",
+        "Suno"
+      ]
     },
     {
       "id": "edit",
       "label": "편집",
       "room": "edit",
-      "gate": false
+      "gate": false,
+      "agent": "editor",
+      "optional": false,
+      "out": "rough.mp4",
+      "tools": [
+        "ffmpeg"
+      ]
     },
     {
       "id": "color",
       "label": "컬러",
       "room": "edit",
-      "gate": false
+      "gate": false,
+      "agent": "colorist",
+      "optional": false,
+      "out": "final.mp4",
+      "tools": [
+        "finish.sh"
+      ]
     },
     {
       "id": "qa",
       "label": "QA",
       "room": "screen",
-      "gate": false
+      "gate": false,
+      "agent": "critic",
+      "optional": false,
+      "out": "qa-report.md",
+      "tools": [
+        "ffmpeg"
+      ]
     },
     {
       "id": "gate2",
       "label": "최종본 승인",
       "room": "boss",
-      "gate": true
+      "gate": true,
+      "agent": "boss",
+      "optional": false,
+      "out": "승인/보류",
+      "tools": []
     },
     {
       "id": "package",
       "label": "패키징",
       "room": "release",
-      "gate": false
+      "gate": false,
+      "agent": "packager",
+      "optional": false,
+      "out": "package.json · subs/",
+      "tools": []
     },
     {
       "id": "publish",
       "label": "업로드",
       "room": "release",
-      "gate": false
+      "gate": false,
+      "agent": "publisher",
+      "optional": false,
+      "out": "upload-checklist.md",
+      "tools": [
+        "YouTube Studio"
+      ]
     },
     {
       "id": "done",
       "label": "공개 완료",
       "room": "release",
-      "gate": false
+      "gate": false,
+      "agent": null,
+      "optional": false,
+      "out": "",
+      "tools": []
+    }
+  ],
+  "steps": [
+    {
+      "id": "plan",
+      "title": "STEP 1 · 기획",
+      "sub": "작가실 · 생성 비용 0원",
+      "stages": [
+        "research",
+        "script",
+        "check",
+        "shotlist",
+        "prompts"
+      ]
+    },
+    {
+      "id": "make",
+      "title": "STEP 2 · 제작",
+      "sub": "촬영 스테이지 · 사운드 부스 — 세 갈래 병렬",
+      "stages": [
+        "keyframes",
+        "clips",
+        "objects",
+        "audio"
+      ]
+    },
+    {
+      "id": "post",
+      "title": "STEP 3 · 후반",
+      "sub": "편집실 · 상영실",
+      "stages": [
+        "edit",
+        "color",
+        "qa"
+      ]
+    },
+    {
+      "id": "release",
+      "title": "STEP 4 · 배포",
+      "sub": "배포 데스크 — 업로드는 대표가 직접",
+      "stages": [
+        "package",
+        "publish",
+        "done"
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "STEP 5 · 피드백",
+      "sub": "매주 성과 → 다음 기획",
+      "stages": []
+    }
+  ],
+  "loops": [
+    {
+      "from": "check",
+      "to": "script",
+      "label": "FIX → 재작성 (최대 2회)"
+    },
+    {
+      "from": "qa",
+      "to": "clips",
+      "label": "RETAKE → 지적된 컷만 재생성 (최대 2회)"
+    },
+    {
+      "from": "analyst",
+      "to": "research",
+      "label": "주간 리포트 → 다음 편 기획"
+    }
+  ],
+  "plan": [
+    {
+      "id": "ep01",
+      "title": "call mom.",
+      "logline": "엄마 전화를 계속 넘기다 밤에 다시 건다. 엄마는 바로 받는다",
+      "lastLine": "She was never too busy for you."
+    },
+    {
+      "id": "ep02",
+      "title": "1%.",
+      "logline": "배터리가 꺼지고 처음 고개를 든다. 창밖은 노을",
+      "lastLine": "It took a dead battery to see the sunset."
+    },
+    {
+      "id": "ep03",
+      "title": "backspace.",
+      "logline": "썼다 지웠다 끝내 못 보낸 메시지",
+      "lastLine": "Backspace is the loudest key."
+    },
+    {
+      "id": "ep04",
+      "title": "5 more minutes.",
+      "logline": "알람을 끌 때마다 흘러가는 아침",
+      "lastLine": "5 minutes at a time, you missed the whole morning."
+    },
+    {
+      "id": "ep05",
+      "title": "i'm fine.",
+      "logline": "안부에 \"i'm fine.\" 이라고 답하는 밤",
+      "lastLine": "'Fine' is the shortest lie."
+    },
+    {
+      "id": "ep06",
+      "title": "tomorrow.",
+      "logline": "문 앞의 새 운동화, 계속 새것",
+      "lastLine": "The shoes are still new. So is the excuse."
+    },
+    {
+      "id": "ep07",
+      "title": "the guitar.",
+      "logline": "구석에 세워둔 꿈",
+      "lastLine": "The dream didn't leave. You did."
+    },
+    {
+      "id": "ep08",
+      "title": "seen.",
+      "logline": "읽고 답이 없는 메시지를 기다리는 밤",
+      "lastLine": "Read at 11:42 PM. Still waiting at 3:07 AM."
+    },
+    {
+      "id": "ep09",
+      "title": "home.",
+      "logline": "늦게 돌아온 빈 방",
+      "lastLine": "Same room. Same silence."
+    },
+    {
+      "id": "ep10",
+      "title": "day one.",
+      "logline": "7편의 기타 먼지를 닦고 첫 코드. 화분에 첫 꽃",
+      "lastLine": "Day one."
     }
   ],
   "agents": [
@@ -145,9 +366,9 @@
       "color": "#3B36C4",
       "room": "writers",
       "model": "sonnet",
-      "status": "done",
-      "ep": "ep01",
-      "note": "확정안(bible/episodes-plan.md)에서 시작 — 리서치 생략"
+      "status": "idle",
+      "ep": null,
+      "note": ""
     },
     {
       "id": "writer",
@@ -315,7 +536,14 @@
       "updatedAt": "2026-10-27T11:49:38.339Z",
       "retries": {},
       "progress": 0.0625,
-      "links": {}
+      "links": {},
+      "stageLog": {
+        "research": {
+          "status": "done",
+          "note": "확정안(bible/episodes-plan.md)에서 시작 — 리서치 생략",
+          "at": "2026-10-27T11:49:38.339Z"
+        }
+      }
     }
   ],
   "log": [

@@ -160,106 +160,231 @@
       "id": "research",
       "label": "리서치",
       "agent": "scout",
-      "room": "writers"
+      "room": "writers",
+      "out": "research.md",
+      "tools": [
+        "WebSearch"
+      ]
     },
     {
       "id": "script",
       "label": "시나리오",
       "agent": "writer",
-      "room": "writers"
+      "room": "writers",
+      "out": "script.md",
+      "tools": []
     },
     {
       "id": "check",
       "label": "검수",
       "agent": "checker",
-      "room": "writers"
+      "room": "writers",
+      "out": "check.md",
+      "tools": [
+        "WebSearch"
+      ]
     },
     {
       "id": "shotlist",
       "label": "샷 리스트",
       "agent": "director",
-      "room": "writers"
+      "room": "writers",
+      "out": "shotlist.json",
+      "tools": []
     },
     {
       "id": "prompts",
       "label": "프롬프트",
       "agent": "dop",
-      "room": "stage"
+      "room": "stage",
+      "out": "prompts.md",
+      "tools": []
     },
     {
       "id": "gate1",
       "label": "기획 승인",
       "agent": "boss",
       "room": "boss",
-      "gate": true
+      "gate": true,
+      "out": "승인/보류",
+      "tools": [
+        "카카오톡 알림"
+      ]
     },
     {
       "id": "keyframes",
       "label": "키프레임",
       "agent": "keyframe",
-      "room": "stage"
+      "room": "stage",
+      "out": "keyframes/",
+      "tools": [
+        "힉스필드 웹"
+      ]
     },
     {
       "id": "clips",
       "label": "클립 생성",
       "agent": "animator",
-      "room": "stage"
+      "room": "stage",
+      "out": "clips/",
+      "tools": [
+        "Kling · 힉스필드"
+      ]
     },
     {
       "id": "objects",
       "label": "3D 렌더",
       "agent": "blender",
       "room": "stage",
-      "optional": true
+      "optional": true,
+      "out": "objects/",
+      "tools": [
+        "Blender MCP"
+      ]
     },
     {
       "id": "audio",
       "label": "사운드",
       "agent": "sound",
-      "room": "sound"
+      "room": "sound",
+      "out": "audio/cue.md",
+      "tools": [
+        "ElevenLabs",
+        "Suno"
+      ]
     },
     {
       "id": "edit",
       "label": "편집",
       "agent": "editor",
-      "room": "edit"
+      "room": "edit",
+      "out": "rough.mp4",
+      "tools": [
+        "ffmpeg"
+      ]
     },
     {
       "id": "color",
       "label": "컬러",
       "agent": "colorist",
-      "room": "edit"
+      "room": "edit",
+      "out": "final.mp4",
+      "tools": [
+        "finish.sh"
+      ]
     },
     {
       "id": "qa",
       "label": "QA",
       "agent": "critic",
-      "room": "screen"
+      "room": "screen",
+      "out": "qa-report.md",
+      "tools": [
+        "ffmpeg"
+      ]
     },
     {
       "id": "gate2",
       "label": "최종본 승인",
       "agent": "boss",
       "room": "boss",
-      "gate": true
+      "gate": true,
+      "out": "승인/보류",
+      "tools": []
     },
     {
       "id": "package",
       "label": "패키징",
       "agent": "packager",
-      "room": "release"
+      "room": "release",
+      "out": "package.json · subs/",
+      "tools": []
     },
     {
       "id": "publish",
       "label": "업로드",
       "agent": "publisher",
-      "room": "release"
+      "room": "release",
+      "out": "upload-checklist.md",
+      "tools": [
+        "YouTube Studio"
+      ]
     },
     {
       "id": "done",
       "label": "공개 완료",
       "agent": null,
-      "room": "release"
+      "room": "release",
+      "out": "",
+      "tools": []
+    }
+  ],
+  "steps": [
+    {
+      "id": "plan",
+      "title": "STEP 1 · 기획",
+      "sub": "작가실 · 생성 비용 0원",
+      "stages": [
+        "research",
+        "script",
+        "check",
+        "shotlist",
+        "prompts"
+      ]
+    },
+    {
+      "id": "make",
+      "title": "STEP 2 · 제작",
+      "sub": "촬영 스테이지 · 사운드 부스 — 세 갈래 병렬",
+      "stages": [
+        "keyframes",
+        "clips",
+        "objects",
+        "audio"
+      ]
+    },
+    {
+      "id": "post",
+      "title": "STEP 3 · 후반",
+      "sub": "편집실 · 상영실",
+      "stages": [
+        "edit",
+        "color",
+        "qa"
+      ]
+    },
+    {
+      "id": "release",
+      "title": "STEP 4 · 배포",
+      "sub": "배포 데스크 — 업로드는 대표가 직접",
+      "stages": [
+        "package",
+        "publish",
+        "done"
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "STEP 5 · 피드백",
+      "sub": "매주 성과 → 다음 기획",
+      "stages": []
+    }
+  ],
+  "loops": [
+    {
+      "from": "check",
+      "to": "script",
+      "label": "FIX → 재작성 (최대 2회)"
+    },
+    {
+      "from": "qa",
+      "to": "clips",
+      "label": "RETAKE → 지적된 컷만 재생성 (최대 2회)"
+    },
+    {
+      "from": "analyst",
+      "to": "research",
+      "label": "주간 리포트 → 다음 편 기획"
     }
   ]
 }
