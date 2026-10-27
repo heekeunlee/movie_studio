@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T14:33:24.183Z",
+  "generatedAt": "2026-10-27T23:14:20.060Z",
   "studioTitle": "QUIET FRAMES STUDIO",
   "rooms": [
     {
@@ -299,67 +299,68 @@
   "plan": [
     {
       "id": "ep01",
-      "title": "call mom.",
-      "logline": "엄마 전화를 계속 넘기다 밤에 다시 건다. 엄마는 바로 받는다",
-      "lastLine": "She was never too busy for you."
+      "title": "call mom. (보류)",
+      "logline": "전제가 같은 기존 광고(Siyaram's 등)가 있어 생성 전 중단",
+      "lastLine": "—"
     },
     {
       "id": "ep02",
-      "title": "1%.",
-      "logline": "배터리가 꺼지고 처음 고개를 든다. 창밖은 노을",
-      "lastLine": "It took a dead battery to see the sunset."
+      "title": "left up.",
+      "logline": "전 세입자의 야광별 옆에 내 별 하나를 붙인다",
+      "lastLine": "Someone needed stars here before I did."
     },
     {
       "id": "ep03",
-      "title": "backspace.",
-      "logline": "썼다 지웠다 끝내 못 보낸 메시지",
-      "lastLine": "Backspace is the loudest key."
+      "title": "the button.",
+      "logline": "중요한 날 전날 밤 떨어진 단추를 비뚤게 직접 단다. 남은 실로 처진 화분 줄기를 묶는다",
+      "lastLine": "It's crooked. It held."
     },
     {
       "id": "ep04",
-      "title": "5 more minutes.",
-      "logline": "알람을 끌 때마다 흘러가는 아침",
-      "lastLine": "5 minutes at a time, you missed the whole morning."
+      "title": "real rain.",
+      "logline": "빗소리 앱 없이 못 자던 밤, 진짜 비가 오자 앱을 끄고 창을 연다. 화분을 창턱에 내놓는다",
+      "lastLine": "I'd been falling asleep to a recording of this."
     },
     {
       "id": "ep05",
-      "title": "i'm fine.",
-      "logline": "안부에 \"i'm fine.\" 이라고 답하는 밤",
-      "lastLine": "'Fine' is the shortest lie."
+      "title": "the spare key.",
+      "logline": "줄 사람 없던 여분 열쇠. 문 밖에서 밤을 샌 다음 날 화분 줄기에 묶어 건다",
+      "lastLine": "The only one always home got the spare key."
     },
     {
       "id": "ep06",
-      "title": "tomorrow.",
-      "logline": "문 앞의 새 운동화, 계속 새것",
-      "lastLine": "The shoes are still new. So is the excuse."
+      "title": "the cast.",
+      "logline": "깁스한 채 혼자 사는 남자가 잼 병 뚜껑 앞에서 결국 이웃 문을 두드린다",
+      "lastLine": "The jar was never the hard part."
     },
     {
       "id": "ep07",
-      "title": "the guitar.",
-      "logline": "구석에 세워둔 꿈",
-      "lastLine": "The dream didn't leave. You did."
+      "title": "the bag.",
+      "logline": "여행 가려고 싸 둔 배낭에서 물건이 하나씩 일상으로 빠져나온다",
+      "lastLine": "Packed for a trip. Lived out of the bag instead."
     },
     {
       "id": "ep08",
-      "title": "seen.",
-      "logline": "읽고 답이 없는 메시지를 기다리는 밤",
-      "lastLine": "Read at 11:42 PM. Still waiting at 3:07 AM."
+      "title": "his handwriting.",
+      "logline": "장보기 목록을 쓰다 내 글씨가 아버지 글씨를 닮았다는 걸 발견한다(아버지는 살아 있다)",
+      "lastLine": "When did my handwriting become his?"
     },
     {
       "id": "ep09",
-      "title": "home.",
-      "logline": "늦게 돌아온 빈 방",
-      "lastLine": "Same room. Same silence."
+      "title": "settled.",
+      "logline": "빈 방의 박수 메아리가 짐이 들어올수록 짧아진다",
+      "lastLine": "It stopped echoing."
     },
     {
       "id": "ep10",
-      "title": "day one.",
-      "logline": "7편의 기타 먼지를 닦고 첫 코드. 화분에 첫 꽃",
-      "lastLine": "Day one."
+      "title": "two weeks.",
+      "logline": "07의 배낭을 다시 싸고, 화분에 급수기를 꽂고 진짜로 떠난다",
+      "lastLine": "Back in two weeks."
     }
   ],
   "reports": [
-    "ep01"
+    "ep01",
+    "ep02"
   ],
   "agents": [
     {
@@ -369,9 +370,9 @@
       "color": "#3B36C4",
       "room": "writers",
       "model": "sonnet",
-      "status": "done",
-      "ep": "ep02",
-      "note": "'1%.' 🔴 탈락(Reel Life·Dancin' Man 전제 동일) · 추천: the ceiling. (야광별, 위험 하)"
+      "status": "idle",
+      "ep": null,
+      "note": ""
     },
     {
       "id": "writer",
@@ -391,9 +392,9 @@
       "color": "#8A5A2B",
       "room": "writers",
       "model": "sonnet",
-      "status": "done",
-      "ep": "ep02",
-      "note": "FIX 반영 완료 — 제목 left up., C1 램프·C4 7s 등, PASS 처리"
+      "status": "idle",
+      "ep": null,
+      "note": ""
     },
     {
       "id": "director",
@@ -402,9 +403,9 @@
       "color": "#1F1F1F",
       "room": "writers",
       "model": "opus",
-      "status": "done",
-      "ep": "ep02",
-      "note": "8컷(7+END) · 47.5초 · ai 6/library 2/reuse C1→C7 · 새 이미지 9·edit 9·영상 5"
+      "status": "idle",
+      "ep": null,
+      "note": ""
     },
     {
       "id": "dop",
@@ -413,9 +414,9 @@
       "color": "#2E7D6B",
       "room": "stage",
       "model": "sonnet",
-      "status": "done",
-      "ep": "ep02",
-      "note": "이미지 11(기준 2 포함·없을 때만) · 편집 9(야광 3은 편집기 수작업) · 영상 5"
+      "status": "idle",
+      "ep": null,
+      "note": ""
     },
     {
       "id": "keyframe",
@@ -533,14 +534,14 @@
       "id": "ep02",
       "title": "left up.",
       "stage": "gate1",
-      "status": "waiting",
+      "status": "done",
       "agent": "boss",
-      "note": "기획 승인 대기 — 대표 확인 필요",
-      "updatedAt": "2026-10-27T14:32:57.938Z",
+      "note": "승인 — K03c 실물 접사 촬영 허용(AI 5회 실패 시), 렌즈 표기는 ep01 결정대로 컷별 유지",
+      "updatedAt": "2026-10-27T23:12:58.035Z",
       "retries": {
         "script": 1
       },
-      "progress": 0.34375,
+      "progress": 0.375,
       "links": {},
       "stageLog": {
         "research": {
@@ -569,9 +570,9 @@
           "at": "2026-10-27T14:32:57.839Z"
         },
         "gate1": {
-          "status": "waiting",
-          "note": "기획 승인 대기 — 대표 확인 필요",
-          "at": "2026-10-27T14:32:57.938Z"
+          "status": "done",
+          "note": "승인 — K03c 실물 접사 촬영 허용(AI 5회 실패 시), 렌즈 표기는 ep01 결정대로 컷별 유지",
+          "at": "2026-10-27T23:12:58.035Z"
         }
       }
     },
@@ -628,6 +629,16 @@
     }
   ],
   "log": [
+    {
+      "stage": "gate1",
+      "status": "done",
+      "agent": "boss",
+      "note": "승인 — K03c 실물 접사 촬영 허용(AI 5회 실패 시), 렌즈 표기는 ep01 결정대로 컷별 유지",
+      "at": "2026-10-27T23:12:58.035Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "대표"
+    },
     {
       "stage": "gate1",
       "status": "waiting",
@@ -767,23 +778,9 @@
       "ep": "ep01",
       "title": "call mom.",
       "who": "키프레임 작가"
-    },
-    {
-      "stage": "gate1",
-      "status": "done",
-      "agent": "boss",
-      "note": "승인 — 권장안(렌즈 표기 유지·K01d 유지·카메라 브랜드 표기 제거)",
-      "at": "2026-10-27T13:52:05.746Z",
-      "ep": "ep01",
-      "title": "call mom.",
-      "who": "대표"
     }
   ],
-  "gate": {
-    "ep": "ep02",
-    "title": "left up.",
-    "label": "기획 승인"
-  },
+  "gate": null,
   "totals": {
     "published": 0,
     "inProgress": 2

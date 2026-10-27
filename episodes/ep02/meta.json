@@ -2,11 +2,11 @@
   "id": "ep02",
   "title": "left up.",
   "createdAt": "2026-10-27T14:09:28.120Z",
-  "updatedAt": "2026-10-27T14:32:57.938Z",
+  "updatedAt": "2026-10-27T23:12:58.035Z",
   "stage": "gate1",
-  "status": "waiting",
+  "status": "done",
   "agent": "boss",
-  "note": "기획 승인 대기 — 대표 확인 필요",
+  "note": "승인 — K03c 실물 접사 촬영 허용(AI 5회 실패 시), 렌즈 표기는 ep01 결정대로 컷별 유지",
   "retries": {
     "script": 1
   },
@@ -102,6 +102,13 @@
       "agent": "boss",
       "note": "기획 승인 대기 — 대표 확인 필요",
       "at": "2026-10-27T14:32:57.938Z"
+    },
+    {
+      "stage": "gate1",
+      "status": "done",
+      "agent": "boss",
+      "note": "승인 — K03c 실물 접사 촬영 허용(AI 5회 실패 시), 렌즈 표기는 ep01 결정대로 컷별 유지",
+      "at": "2026-10-27T23:12:58.035Z"
     }
   ]
 }
