@@ -24,3 +24,9 @@
 - 업로드 시 '변경되었거나 합성된 콘텐츠' 표시 필수 (YouTube API: status.containsSyntheticMedia=true)
 - 실존 인물·작품·채널명을 프롬프트에 넣지 않는다 ("in the style of ..." 금지)
 - 자해·자살 묘사 금지. 정신건강 주제는 설명란에 findahelpline.com 안내
+
+## 참고 — ep01 검수에서 확인한 인접 작품 (금지는 아니지만 겹치지 않게)
+- Siyaram's "A Mother's Love – The Only Call That Matters" (AGENCY09, 2025) — 바쁜 **직장인** 아들이 엄마 전화를 무시함. 사무실·상사·회의 장면과 "the only call that matters" 류 문구 금지
+- Verizon "Call Mom" (R/GA) — 아이들이 평생 "mom"을 부르는 몽타주 구성 금지
+- Coca-Cola "Inseparable" (2015) — "give Mom the gift she wants most. Call her." 문구·변형 금지
+- 엄마가 문자로 수긍한 뒤 또 거는 연속 부재중(조급·불안한 엄마) — '겁주는 부재중' 톤으로 기울어 피한다
