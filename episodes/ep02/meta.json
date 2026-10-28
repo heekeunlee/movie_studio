@@ -2,11 +2,11 @@
   "id": "ep02",
   "title": "left up.",
   "createdAt": "2026-10-27T14:09:28.120Z",
-  "updatedAt": "2026-10-28T04:23:52.413Z",
+  "updatedAt": "2026-10-28T05:35:03.785Z",
   "stage": "keyframes",
   "status": "working",
   "agent": "keyframe",
-  "note": "기준 방 이미지 확정(ref-room, 후보 4장 중 1번) — K01d 생성 대기",
+  "note": "프롬프트 연속성 중심 재작성 — 생성 체인 정리, K01d부터",
   "retries": {
     "script": 1
   },
@@ -116,6 +116,13 @@
       "agent": "keyframe",
       "note": "기준 방 이미지 확정(ref-room, 후보 4장 중 1번) — K01d 생성 대기",
       "at": "2026-10-28T04:23:52.413Z"
+    },
+    {
+      "stage": "keyframes",
+      "status": "working",
+      "agent": "keyframe",
+      "note": "프롬프트 연속성 중심 재작성 — 생성 체인 정리, K01d부터",
+      "at": "2026-10-28T05:35:03.785Z"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T04:23:52.509Z",
+  "generatedAt": "2026-10-28T05:35:35.396Z",
   "studioTitle": "DASEPA STUDIO",
   "rooms": [
     {
@@ -427,7 +427,7 @@
       "model": "sonnet",
       "status": "working",
       "ep": "ep02",
-      "note": "기준 방 이미지 확정(ref-room, 후보 4장 중 1번) — K01d 생성 대기"
+      "note": "프롬프트 연속성 중심 재작성 — 생성 체인 정리, K01d부터"
     },
     {
       "id": "animator",
@@ -536,8 +536,8 @@
       "stage": "keyframes",
       "status": "working",
       "agent": "keyframe",
-      "note": "기준 방 이미지 확정(ref-room, 후보 4장 중 1번) — K01d 생성 대기",
-      "updatedAt": "2026-10-28T04:23:52.413Z",
+      "note": "프롬프트 연속성 중심 재작성 — 생성 체인 정리, K01d부터",
+      "updatedAt": "2026-10-28T05:35:03.785Z",
       "retries": {
         "script": 1
       },
@@ -576,8 +576,8 @@
         },
         "keyframes": {
           "status": "working",
-          "note": "기준 방 이미지 확정(ref-room, 후보 4장 중 1번) — K01d 생성 대기",
-          "at": "2026-10-28T04:23:52.413Z"
+          "note": "프롬프트 연속성 중심 재작성 — 생성 체인 정리, K01d부터",
+          "at": "2026-10-28T05:35:03.785Z"
         }
       }
     },
@@ -634,6 +634,16 @@
     }
   ],
   "log": [
+    {
+      "stage": "keyframes",
+      "status": "working",
+      "agent": "keyframe",
+      "note": "프롬프트 연속성 중심 재작성 — 생성 체인 정리, K01d부터",
+      "at": "2026-10-28T05:35:03.785Z",
+      "ep": "ep02",
+      "title": "left up.",
+      "who": "키프레임 작가"
+    },
     {
       "stage": "keyframes",
       "status": "working",
@@ -770,16 +780,6 @@
       "agent": "scout",
       "note": "'1%.' 🔴 탈락(Reel Life·Dancin' Man 전제 동일) · 추천: the ceiling. (야광별, 위험 하)",
       "at": "2026-10-27T14:15:21.878Z",
-      "ep": "ep02",
-      "title": "left up.",
-      "who": "트렌드 리서처"
-    },
-    {
-      "stage": "research",
-      "status": "working",
-      "agent": "scout",
-      "note": "독창성 검증 — 유사 작품 검색 중",
-      "at": "2026-10-27T14:09:32.102Z",
       "ep": "ep02",
       "title": "left up.",
       "who": "트렌드 리서처"
