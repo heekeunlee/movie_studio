@@ -25,19 +25,27 @@ No words. Just watch.
 
 ## 유튜브 채널 문구 (2026-10-28) — https://www.youtube.com/@dasepa.studio
 - 이름 `dasepa` · 핸들 `@dasepa.studio` · 카테고리 Film & Animation
-- 설명:
+- 설명 (869자, 한도 1000):
 ```
 Short films about the small moments.
 
-A light switched off. A note left behind. A room that slowly becomes home.
-We make short cinematic films about the quiet moments most of us live through alone — and rarely talk about.
+dasepa makes short cinematic films about the quiet parts of everyday life — the moments that happen when no one else is watching.
 
-No words. Just watch.
+A lamp switched off at midnight. A note someone left behind. A room that slowly starts to feel like home. Moments that seem too small to matter, until you notice how much of life is made of them.
+
+What you'll find here:
+• Films under a minute, made to be watched more than once
+• No dialogue — the story is told through light, objects and small gestures
+• One question in every comment section, because your story belongs here too
+
+Every film begins with an original idea, checked so it doesn't repeat stories that already exist.
+
+Made with the help of AI tools, and written, directed and edited by dasepa studio.
 
 New films regularly. Subscribe and stay for a few seconds.
 
-Made with the help of AI tools.
+Instagram: @dasepa.studio
 ```
-- 'No words. Just watch.' 줄은 무대사 전략일 때만. 'Made with the help of AI tools.' 는 유지(채널 원칙: AI 표시)
+- 'No dialogue —' 항목은 무대사 전략일 때만. 'Made with the help of AI tools.' 는 유지(채널 원칙: AI 표시)
 - 키워드: short film, short films, cinematic shorts, wordless film, silent film, small moments, emotional short film, quiet film, one room, AI short film
 - 업로드 기본 설명 끝줄: `Made with the help of AI tools. · Subscribe for more small moments.`
