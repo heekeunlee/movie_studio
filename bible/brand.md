@@ -18,3 +18,7 @@ No words. Just watch.
 ```
 - 첫 줄은 형식이 바뀌어도 유지한다. 두 번째 줄은 지금(무대사)만의 설명이라, 전략이 바뀌면 이 줄만 지운다
 - 무대사·화분·원룸 같은 현재 형식은 소개 첫 줄에 넣지 않는다
+
+## 유튜브 배너 (2026-10-28)
+- 파일: `assets/brand/youtube-banner.png` (2560×1440) · 원본 `youtube-banner.svg`
+- `d.` 로고 + `dasepa` + "Short films about the small moments." — 모두 중앙 안전 영역(1546×423) 안. 바깥은 바탕색만 (TV에서만 보임)

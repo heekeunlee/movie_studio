@@ -1,0 +1,14 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440">
+  <!-- dasepa studio 유튜브 배너 — 핵심 요소는 중앙 안전 영역(1546×423) 안에만 -->
+  <rect width="2560" height="1440" fill="#f4efe6"/>
+  <line x1="0" y1="720" x2="2560" y2="720" stroke="#1f1b26" stroke-opacity=".06" stroke-width="2"/>
+  <g transform="translate(1205 720)">
+    <text x="-430" y="70" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="230" fill="#1f1b26">d</text>
+    <circle cx="-336" cy="60" r="17" fill="#d98a2b"/>
+    <line x1="-260" y1="-120" x2="-260" y2="120" stroke="#1f1b26" stroke-opacity=".25" stroke-width="3"/>
+    <text x="-200" y="-10" font-family="Georgia, 'Times New Roman', serif" font-size="120" letter-spacing="3" fill="#1f1b26">dasepa</text>
+    <text x="-196" y="70" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="50" fill="#1f1b26" fill-opacity=".72">Short films about the small moments.</text>
+  </g>
+  
+</svg>
