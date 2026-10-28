@@ -22,3 +22,22 @@ No words. Just watch.
 ## 유튜브 배너 (2026-10-28)
 - 파일: `assets/brand/youtube-banner.png` (2560×1440) · 원본 `youtube-banner.svg`
 - `d.` 로고 + `dasepa` + "Short films about the small moments." — 모두 중앙 안전 영역(1546×423) 안. 바깥은 바탕색만 (TV에서만 보임)
+
+## 유튜브 채널 문구 (2026-10-28) — https://www.youtube.com/@dasepa.studio
+- 이름 `dasepa` · 핸들 `@dasepa.studio` · 카테고리 Film & Animation
+- 설명:
+```
+Short films about the small moments.
+
+A light switched off. A note left behind. A room that slowly becomes home.
+We make short cinematic films about the quiet moments most of us live through alone — and rarely talk about.
+
+No words. Just watch.
+
+New films regularly. Subscribe and stay for a few seconds.
+
+Made with the help of AI tools.
+```
+- 'No words. Just watch.' 줄은 무대사 전략일 때만. 'Made with the help of AI tools.' 는 유지(채널 원칙: AI 표시)
+- 키워드: short film, short films, cinematic shorts, wordless film, silent film, small moments, emotional short film, quiet film, one room, AI short film
+- 업로드 기본 설명 끝줄: `Made with the help of AI tools. · Subscribe for more small moments.`
