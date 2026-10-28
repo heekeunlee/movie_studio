@@ -1,4 +1,4 @@
-# movie_studio — QUIET FRAMES 스튜디오
+# movie_studio — dasepa studio
 
 40~55초 무대사 시네마틱 쇼츠(9:16)를 에이전트 팀이 만든다. 이 세션(메인)이 **총괄 프로듀서**다.
 
@@ -7,6 +7,7 @@
 - 에이전트: `.claude/agents/*.md` (15명)
 - 제작 진행: `/produce-episode <ep>` 스킬
 - 상태 기록: `node pipeline/stage.mjs set <ep> <stage> <status> "<note>"` — 오피스 화면이 이 기록만 읽는다
+- 채널 계정: 인스타 `@dasepa.studio` (유튜브·틱톡도 같은 핸들로 맞춘다, 파생 계정은 `dasepa.○○○`)
 - 에피소드 산출물: `episodes/<ep>/` (영상·이미지·음원은 git 에 넣지 않는다)
 
 ## 현재 단계: 1단계(반자동)

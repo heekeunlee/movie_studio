@@ -1,6 +1,6 @@
 {
   "$comment": "스튜디오 로스터 단일 원본. 에이전트 정의·오피스 화면·상태 생성기가 모두 이 파일을 기준으로 삼습니다.",
-  "studioTitle": "QUIET FRAMES STUDIO",
+  "studioTitle": "DASEPA STUDIO",
   "rooms": [
     {
       "id": "writers",

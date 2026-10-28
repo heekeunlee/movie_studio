@@ -1,4 +1,4 @@
-/* QUIET FRAMES 픽셀 스튜디오
+/* dasepa studio 픽셀 스튜디오
  *
  * state.json 하나만 읽어서 그린다 (pipeline/build-state.mjs 가 만든다).
  * 스프라이트는 ai_crew 오피스와 같은 12×16 규격을 쓴다.
