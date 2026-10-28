@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <!-- dasepa studio 프로필 — 소문자 d + 주황 점. 파생 계정은 점 색만 바꾼다 -->
+  <rect width="1080" height="1080" fill="#f4efe6"/>
+  <text x="510" y="700" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="560" fill="#1f1b26">d</text>
+  <circle cx="742" cy="676" r="40" fill="#d98a2b"/>
+</svg>

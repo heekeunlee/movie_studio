@@ -11,3 +11,4 @@
 .env
 node_modules/
 .DS_Store
+!assets/brand/*.png
