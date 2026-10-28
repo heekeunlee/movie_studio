@@ -251,8 +251,8 @@
     "대표: prompts.md 순서대로 키프레임 → keyframes/, 영상 → clips/",
     "🖼 키프레임 검사 · 🎧 사운드 큐 작성(병렬) → ✂️ 편집 → 🎨 컬러 → 🧐 QA → 🔔 최종본 승인"
   ],
-  "stage": "gate1",
-  "status": "done",
+  "stage": "keyframes",
+  "status": "working",
   "timeline": [
     {
       "stage": "research",
@@ -379,6 +379,15 @@
       "at": "2026-10-27T23:12:58.035Z",
       "label": "기획 승인",
       "who": "대표"
+    },
+    {
+      "stage": "keyframes",
+      "status": "working",
+      "agent": "keyframe",
+      "note": "기준 방 이미지 확정(ref-room, 후보 4장 중 1번) — K01d 생성 대기",
+      "at": "2026-10-28T04:23:52.413Z",
+      "label": "키프레임",
+      "who": "키프레임 작가"
     }
   ]
 }
